@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Quicksand";
+}
+
+body {
+  @apply bg-background text-white;
+}
+
+.box-center {
+  @apply w-6/12 mx-auto;
+}
+
+.glassmorphism {
+  @apply rounded-xl mb-5 border border-white border-opacity-30 bg-white/0/* shadow-[inset_0px_0px_100px_100px_rgb(200,199,199,0.1)] backdrop-blur*/ p-5;
+}
