@@ -1,4 +1,4 @@
-import EducationBox from "@components/EducationBox";
+import PathBox from "@components/PathBox";
 import ProjectsBox from "@components/ProjectsBox";
 import TechList from "@components/TechList";
 import Image from "next/image";
@@ -10,21 +10,21 @@ const Home = () => {
     <section>
       <div className="glassmorphism flex justify-between items-center">
         <div className="flex flex-col gap-1">
-          <h1 className="font-semibold text-3xl">Salam, I am Muhamad</h1>
+          <h1 className="font-semibold text-3xl">Salam, I am Mouhamad</h1>
           <span className="text-xl">Software Engineer</span>
           <span className="text-green-500 flex items-center gap-1">
             <span className="w-3 h-3 bg-green-500 block rounded-full"></span>
-            Open to work
+            Available to work
           </span>
         </div>
 
-        <div className="flex flex-col justify-center gap-2">
+        <div className="flex flex-col justify-center gap-2 border border-white border-opacity-20 rounded-xl p-2">
           <Image
             src={"/assets/me.jpg"}
-            width={100}
-            height={100}
+            width={130}
+            height={130}
             alt="me"
-            className="rounded-full object-cover"
+            className="rounded-xl object-cover"
           />
           <div className="flex flex-row items-center justify-center gap-3">
             <Link href={"https://linkedin.com"}>
@@ -58,7 +58,7 @@ const Home = () => {
       </div>
 
       <div className="glassmorphism">
-        <EducationBox />
+        <PathBox />
       </div>
     </section>
   );

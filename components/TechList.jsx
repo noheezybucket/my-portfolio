@@ -69,10 +69,10 @@ const TechList = () => {
                 src={`/assets/${skill.icon}.svg`}
                 width={30}
                 height={30}
-                alt="me"
+                alt={skill.icon}
                 className="rounded-full object-cover"
               />
-              <span>{skill.name}</span>
+              <span className="text-sm">{skill.name}</span>
             </span>
           );
         })}

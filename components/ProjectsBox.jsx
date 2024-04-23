@@ -5,22 +5,36 @@ import Image from "next/image";
 const projects = [
   {
     id: 1,
-    title: "Ndoura Traiteur",
+    title: "RRTACU",
     description: "Ma Description",
+    image: "rrtacu.png",
     link: "https://google.com",
     tools: [
-      { id: 1, name: "React", icon: "icon" },
-      { id: 2, name: "Node", icon: "icon" },
+      { id: 1, name: "WordPress", icon: "icon" },
+      { id: 2, name: "Astra", icon: "icon" },
+      { id: 3, name: "Elementor", icon: "icon" },
+    ],
+  },
+  {
+    id: 2,
+    title: "Ndoura Traiteur",
+    description: "Ma Description",
+    image: "ndoura.png",
+    link: "https://rrtacu.com",
+    tools: [
+      { id: 1, name: "WordPress", icon: "icon" },
+      { id: 2, name: "Elementor", icon: "icon" },
     ],
   },
   {
     id: 2,
     title: "Africa Car Group",
     description: "Ma Description",
-    link: "https://google.com",
+    image: "def-img.svg",
+    link: "https://ndouratraiteur.com",
     tools: [
-      { id: 1, name: "React", icon: "icon" },
-      { id: 2, name: "Node", icon: "icon" },
+      { id: 1, name: "WordPress", icon: "icon" },
+      { id: 2, name: "Elementor", icon: "icon" },
     ],
   },
 ];
@@ -35,16 +49,18 @@ const ProjectsBox = () => {
         buttonLink={"/projects"}
         buttonName={"See Everything"}
       />
-      <hr /> <br />
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 h-[60vh] overflow-y-scroll pr-2">
         {projects.map((project) => {
           return (
-            <div className="flex gap-5 border border-white border-opacity-20 rounded-xl ">
+            <div
+              className="flex flex-col lg:flex-row gap-5 border border-white border-opacity-20 rounded-xl p-2"
+              key={project.id}
+            >
               <Image
-                src={"/assets/me.jpg"}
-                width={300}
+                src={`/assets/${project.image}`}
+                width={200}
                 height={200}
-                className="object-cover rounded-xl"
+                className="object-cover max-w-[200px] max-h-[200] w-full h-full rounded-xl border border-white border-opacity-20"
               />
 
               <div className="flex flex-col gap-2">
@@ -64,11 +80,13 @@ const ProjectsBox = () => {
                           alt="me"
                           className="rounded-full object-cover"
                         />
-                        <span>{tool.name}</span>
+                        <span className="text-sm">{tool.name}</span>
                       </span>
                     );
                   })}
-                  <button className="btn-primary">See the project</button>
+                  <div>
+                    <button className="btn-primary">See the project</button>
+                  </div>
                 </div>
               </div>
             </div>
