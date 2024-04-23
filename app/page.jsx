@@ -9,10 +9,13 @@ const Home = () => {
   return (
     <section>
       <div className="glassmorphism flex justify-between items-center">
-        <div>
-          <h1 className="font-bold text-3xl">Salam, I am Muhamad</h1>
-          <span>Software Engineer</span> <br />
-          <span>Open to work</span>
+        <div className="flex flex-col gap-1">
+          <h1 className="font-semibold text-3xl">Salam, I am Muhamad</h1>
+          <span className="text-xl">Software Engineer</span>
+          <span className="text-green-500 flex items-center gap-1">
+            <span className="w-3 h-3 bg-green-500 block rounded-full"></span>
+            Open to work
+          </span>
         </div>
 
         <div className="flex flex-col justify-center gap-2">

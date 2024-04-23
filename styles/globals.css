@@ -10,6 +10,27 @@
 
 body {
   @apply bg-background text-white;
+  scroll-behavior: smooth;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: white;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: white;
 }
 
 .box-center {
@@ -17,5 +38,9 @@ body {
 }
 
 .glassmorphism {
-  @apply rounded-xl mb-5 border border-white border-opacity-30 bg-white/0/* shadow-[inset_0px_0px_100px_100px_rgb(200,199,199,0.1)] backdrop-blur*/ p-5;
+  @apply rounded-xl mb-10 border border-white border-opacity-10 bg-white/0  shadow-[inset_0px_0px_100px_100px_rgb(200,199,199,0.05)] backdrop-blur p-5;
+}
+
+.btn-primary {
+  @apply border border-white rounded px-3 py-2;
 }

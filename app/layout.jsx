@@ -3,7 +3,7 @@ import Header from "@components/Header";
 import "@styles/globals.css";
 
 export const metadata = {
-  title: "Muhamad",
+  title: "Mouhamad Gueye",
   description: "Discover my job",
 };
 const RootLayout = ({ children }) => {
