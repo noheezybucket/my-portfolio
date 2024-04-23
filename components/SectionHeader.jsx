@@ -10,15 +10,9 @@ const SectionHeader = ({
 }) => {
   return (
     <div className="flex flex-row items-center justify-between mb-7">
-      <div className="flex flex-row items-start">
+      <div className="flex flex-row items-start gap-2">
         <div>
-          <Image
-            src={`/assets/${icon}.svg`}
-            width={50}
-            height={50}
-            alt="me"
-            className="rounded-full object-cover"
-          />
+          <Image src={`/assets/${icon}.svg`} width={50} height={50} alt="me" />
         </div>
         <div>
           <h2 className="text-2xl font-semibold">{title}</h2>

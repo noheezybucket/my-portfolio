@@ -10,9 +10,11 @@ const Home = () => {
     <section>
       <div className="glassmorphism flex justify-between items-center">
         <div className="flex flex-col gap-1">
-          <h1 className="font-semibold text-3xl">Salam, I am Mouhamad</h1>
-          <span className="text-xl">Software Engineer</span>
-          <span className="text-green-500 flex items-center gap-1">
+          <h1 className="font-semibold text-xl lg:text-3xl">
+            Salam, I am Mouhamad
+          </h1>
+          <span className="text-sm lg:text-lg">Software Engineer</span>
+          <span className="text-green-500 flex items-center gap-1 text-sm">
             <span className="w-3 h-3 bg-green-500 block rounded-full"></span>
             Available to work
           </span>

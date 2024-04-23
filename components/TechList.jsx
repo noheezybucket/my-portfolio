@@ -54,7 +54,7 @@ const TechList = () => {
   return (
     <section>
       <SectionHeader
-        icon={"icon"}
+        icon={"technos"}
         title={"Skills"}
         description={"I will describe my skills here"}
       />

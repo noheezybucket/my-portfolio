@@ -1,6 +1,7 @@
 import React from "react";
 import SectionHeader from "./SectionHeader";
 import Image from "next/image";
+import Link from "next/link";
 
 const projects = [
   {
@@ -8,7 +9,7 @@ const projects = [
     title: "RRTACU",
     description: "Ma Description",
     image: "rrtacu.png",
-    link: "https://google.com",
+    link: "https://rrtacu.com",
     tools: [
       { id: 1, name: "WordPress", icon: "icon" },
       { id: 2, name: "Astra", icon: "icon" },
@@ -20,7 +21,7 @@ const projects = [
     title: "Ndoura Traiteur",
     description: "Ma Description",
     image: "ndoura.png",
-    link: "https://rrtacu.com",
+    link: "https://ndouratraiteur.com",
     tools: [
       { id: 1, name: "WordPress", icon: "icon" },
       { id: 2, name: "Elementor", icon: "icon" },
@@ -31,7 +32,7 @@ const projects = [
     title: "Africa Car Group",
     description: "Ma Description",
     image: "def-img.svg",
-    link: "https://ndouratraiteur.com",
+    link: "https://africacorpgroup.com",
     tools: [
       { id: 1, name: "WordPress", icon: "icon" },
       { id: 2, name: "Elementor", icon: "icon" },
@@ -43,24 +44,23 @@ const ProjectsBox = () => {
   return (
     <section>
       <SectionHeader
-        icon={"icon"}
+        icon={"projects"}
         title={"Projects"}
         description={"I will describe my projects here"}
-        buttonLink={"/projects"}
-        buttonName={"See Everything"}
+        // buttonLink={"/projects"}
+        // buttonName={"See Everything"}
       />
-      <div className="flex flex-col gap-5 h-[60vh] overflow-y-scroll pr-2">
+      <div className="grid grid-cols-2 gap-5">
         {projects.map((project) => {
           return (
-            <div
-              className="flex flex-col lg:flex-row gap-5 border border-white border-opacity-20 rounded-xl p-2"
+            <Link
+              href={project.link}
+              className="flex flex-col  gap-5 border border-white border-opacity-20 rounded-xl p-2"
               key={project.id}
             >
-              <Image
+              <img
                 src={`/assets/${project.image}`}
-                width={200}
-                height={200}
-                className="object-cover max-w-[200px] max-h-[200] w-full h-full rounded-xl border border-white border-opacity-20"
+                className="object-cover rounded-xl border border-white border-opacity-20"
               />
 
               <div className="flex flex-col gap-2">
@@ -84,12 +84,9 @@ const ProjectsBox = () => {
                       </span>
                     );
                   })}
-                  <div>
-                    <button className="btn-primary">See the project</button>
-                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

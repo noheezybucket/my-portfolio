@@ -54,24 +54,27 @@ const PathBox = () => {
   return (
     <div>
       <SectionHeader
-        icon={"icon"}
+        icon={"education"}
         title={"Education"}
         description={"I will describe my experience here"}
-        buttonLink={"tro"}
-        buttonName={"Get Resume"}
+        // buttonLink={"tro"}
+        // buttonName={"Get Resume"}
       />
-      <div className="border-op my-5 p-2 space-y-5 h-[40vh] overflow-y-scroll">
+      <div className="border-op my-5 p-2">
         {education.map((edu) => {
           return (
             <div key={edu.id}>
               <div>
-                <div className="flex justify-between">
-                  <span className="text-xl font-semibold">{edu.school}</span>
+                <div className="flex flex-col sm:flex-row justify-between">
+                  <span className="text-xl font-semibold flex items-start gap-2">
+                    <span className="w-3 h-3 bg-green-500 block rounded-full"></span>
+                    {edu.school}
+                  </span>
                   <span className="text-sm">{edu.length}</span>
                 </div>
                 <p className="text-sm">{edu.description}</p>
               </div>
-              {education.length != edu.id && <hr />}
+              {education.length != edu.id && <hr className="my-5" />}
             </div>
           );
         })}
@@ -80,11 +83,11 @@ const PathBox = () => {
       <br />
 
       <SectionHeader
-        icon={"icon"}
+        icon={"experience"}
         title={"Experience"}
         description={"I will describe my education here"}
-        buttonLink={"tro"}
-        buttonName={"Get Resume"}
+        // buttonLink={"tro"}
+        // buttonName={"Get Resume"}
       />
 
       <div className="border-op p-2 space-y-5">
@@ -99,7 +102,7 @@ const PathBox = () => {
                   className="rounded-xl max-h-[50px]"
                 />
                 <div className="w-full">
-                  <div className="flex justify-between">
+                  <div className="flex flex-col  justify-between">
                     <span className="text-xl font-semibold">
                       {xp.entreprise}
                     </span>

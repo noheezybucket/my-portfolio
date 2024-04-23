@@ -3,8 +3,8 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="box-center flex justify-between items-center my-4 glassmorphism">
-      <h1 className="font-bold">muhamad</h1>
+    <header className="box-center flex justify-between items-center my-4 glassmorphism py-4">
+      <h1 className="font-bold py-2">mouhamad</h1>
       <nav>
         <ul className="flex gap-5">
           <li>
