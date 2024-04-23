@@ -5,22 +5,27 @@ import Image from "next/image";
 const skills = [
   {
     id: 1,
-    name: "React",
+    name: "ReactJS",
     icon: "icon",
   },
   {
     id: 2,
-    name: "JavascSript",
+    name: "NextJS",
     icon: "icon",
   },
   {
     id: 3,
-    name: "React Native",
+    name: "Tailwind",
+    icon: "icon",
+  },
+  {
+    id: 3,
+    name: "Bootstrap",
     icon: "icon",
   },
   {
     id: 4,
-    name: "Github",
+    name: "SASS",
     icon: "icon",
   },
   {
@@ -30,22 +35,32 @@ const skills = [
   },
   {
     id: 6,
-    name: "Slack",
+    name: "React Native",
     icon: "icon",
   },
   {
     id: 7,
-    name: "NextJs",
+    name: "MySQL",
     icon: "icon",
   },
   {
     id: 8,
-    name: "React",
+    name: "MongoDB",
     icon: "icon",
   },
   {
     id: 9,
-    name: "Vercel",
+    name: "NodeJS",
+    icon: "icon",
+  },
+  {
+    id: 10,
+    name: "WordPress",
+    icon: "icon",
+  },
+  {
+    id: 11,
+    name: "Angular",
     icon: "icon",
   },
 ];
@@ -55,7 +70,7 @@ const TechList = () => {
     <section>
       <SectionHeader
         icon={"technos"}
-        title={"Skills"}
+        title={"Tools that I use"}
         description={"I will describe my skills here"}
       />
       <div className="flex gap-3 flex-wrap">

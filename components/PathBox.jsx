@@ -66,7 +66,7 @@ const PathBox = () => {
             <div key={edu.id}>
               <div>
                 <div className="flex flex-col sm:flex-row justify-between">
-                  <span className="text-xl font-semibold flex items-start gap-2">
+                  <span className="text-xl font-semibold flex items-center gap-2">
                     <span className="w-3 h-3 bg-green-500 block rounded-full"></span>
                     {edu.school}
                   </span>
