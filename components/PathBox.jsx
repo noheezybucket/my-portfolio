@@ -67,7 +67,7 @@ const PathBox = () => {
               <div>
                 <div className="flex flex-col sm:flex-row justify-between">
                   <span className="text-xl font-semibold flex items-center gap-2">
-                    <span className="w-3 h-3 bg-green-500 block rounded-full"></span>
+                    <span className="w-3 h-3 bg-orange-500 block rounded-full"></span>
                     {edu.school}
                   </span>
                   <span className="text-sm">{edu.length}</span>
@@ -102,7 +102,7 @@ const PathBox = () => {
                   className="rounded-xl max-h-[50px]"
                 />
                 <div className="w-full">
-                  <div className="flex flex-col  justify-between">
+                  <div className="flex flex-col lg:flex-row  justify-between">
                     <span className="text-xl font-semibold">
                       {xp.entreprise}
                     </span>

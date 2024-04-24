@@ -9,7 +9,12 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body>
+      <body
+      //     className="bg-gradient-to-r
+      // from-background
+      // to-gray-900
+      // background-animate"
+      >
         <Header />
         <main className="box-center">{children}</main>
         <Footer />

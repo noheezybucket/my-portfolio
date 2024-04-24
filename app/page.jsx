@@ -20,7 +20,7 @@ const Home = () => {
           </span>
         </div>
 
-        <div className="flex flex-col justify-center gap-2 border border-white border-opacity-20 rounded-xl p-2">
+        <div className="flex flex-col justify-center gap-2 border border-op rounded-xl p-2  bg-background">
           <Image
             src={"/assets/me.jpg"}
             width={130}

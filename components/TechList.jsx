@@ -6,62 +6,62 @@ const skills = [
   {
     id: 1,
     name: "ReactJS",
-    icon: "icon",
+    icon: "react",
   },
   {
     id: 2,
     name: "NextJS",
-    icon: "icon",
+    icon: "next",
   },
   {
     id: 3,
     name: "Tailwind",
-    icon: "icon",
+    icon: "tailwind",
   },
   {
     id: 3,
     name: "Bootstrap",
-    icon: "icon",
+    icon: "bootstrap",
   },
   {
     id: 4,
     name: "SASS",
-    icon: "icon",
+    icon: "sass",
   },
   {
     id: 5,
     name: "Laravel",
-    icon: "icon",
+    icon: "laravel",
   },
   {
     id: 6,
     name: "React Native",
-    icon: "icon",
+    icon: "react",
   },
   {
     id: 7,
     name: "MySQL",
-    icon: "icon",
+    icon: "mysql",
   },
   {
     id: 8,
     name: "MongoDB",
-    icon: "icon",
+    icon: "mongo",
   },
   {
     id: 9,
     name: "NodeJS",
-    icon: "icon",
+    icon: "node",
   },
   {
     id: 10,
     name: "WordPress",
-    icon: "icon",
+    icon: "wordpress",
   },
   {
     id: 11,
     name: "Angular",
-    icon: "icon",
+    icon: "angular",
   },
 ];
 
@@ -76,18 +76,14 @@ const TechList = () => {
       <div className="flex gap-3 flex-wrap">
         {skills.map((skill) => {
           return (
-            <span
-              className="border border-white rounded flex items-center px-3 p-1"
-              key={skill.id}
-            >
+            <span className="tools" key={skill.id}>
               <Image
-                src={`/assets/${skill.icon}.svg`}
-                width={30}
-                height={30}
+                src={`/assets/tools/${skill.icon}.svg`}
+                width={25}
+                height={25}
                 alt={skill.icon}
-                className="rounded-full object-cover"
               />
-              <span className="text-sm">{skill.name}</span>
+              <span className="tool-name">{skill.name}</span>
             </span>
           );
         })}
