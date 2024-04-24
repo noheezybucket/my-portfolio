@@ -93,7 +93,7 @@ const PathBox = () => {
       <div className="border-op p-2 space-y-5">
         {experiences.map((xp) => {
           return (
-            <div className="border-op p-2" key={xp.id}>
+            <div className="bg-background border-op p-2" key={xp.id}>
               <div className="flex gap-5">
                 <Image
                   src={`/assets/${xp.image}`}

@@ -35,7 +35,7 @@ const ProjectsBox = () => {
         // buttonLink={"/projects"}
         // buttonName={"See Everything"}
       />
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {projects.map((project) => {
           return (
             <Link

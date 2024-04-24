@@ -63,6 +63,11 @@ const skills = [
     name: "Angular",
     icon: "angular",
   },
+  {
+    id: 12,
+    name: "npm",
+    icon: "npm",
+  },
 ];
 
 const TechList = () => {
