@@ -38,7 +38,7 @@ body {
 }
 
 .glassmorphism {
-  @apply rounded-xl mb-10 border border-white border-opacity-10 bg-white/10  /*shadow-[inset_0px_0px_100px_100px_rgb(200,199,199,0.1)]*/ backdrop-blur-xl p-2;
+  @apply rounded-xl mb-10 border border-white border-opacity-10 /*bg-white/10  shadow-[inset_0px_0px_100px_100px_rgb(200,199,199,0.1)] backdrop-blur-xl*/ p-2;
 }
 
 .btn-primary {
@@ -50,11 +50,15 @@ body {
 }
 
 .tools {
-  @apply bg-background rounded flex gap-1 items-center  p-1;
+  @apply rounded flex gap-1 items-center  p-2 border-op;
 }
 
 .tool-name {
   @apply text-xs;
+}
+
+hr {
+  @apply border-op;
 }
 
 /* animation  */

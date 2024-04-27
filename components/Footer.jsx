@@ -8,19 +8,13 @@ const socials = [
     id: 1,
     name: "LinkedIn",
     link: "",
-    icon: "icon.svg",
+    icon: "linkedin.svg",
   },
   {
     id: 2,
     name: "Email",
     link: "",
-    icon: "icon.svg",
-  },
-  {
-    id: 3,
-    name: "Instagram",
-    link: "",
-    icon: "icon.svg",
+    icon: "mailme.svg",
   },
 ];
 const Footer = () => {
@@ -32,20 +26,22 @@ const Footer = () => {
           title={"Contacts"}
           description={"Hit me up so we can discuss"}
         />
-        <div>
+        <div className="border-op p-2">
           <ul className="space-y-2">
             {socials.map((social) => {
               return (
-                <li key={social.id} className="flex gap-2 border-op py-1">
-                  <Image
-                    src={`/assets/${social.icon}`}
-                    width={30}
-                    height={30}
-                    alt={social.name}
-                    className="rounded-full object-cover"
-                  />
-                  <span>{social.name}</span>
-                </li>
+                <>
+                  <li key={social.id} className="flex gap-2  py-1">
+                    <Image
+                      src={`/assets/socials/${social.icon}`}
+                      width={30}
+                      height={30}
+                      alt={social.name}
+                    />
+                    <span>{social.name}</span>
+                  </li>
+                  {socials.length != social.id && <hr className="my-5" />}
+                </>
               );
             })}
           </ul>
@@ -53,16 +49,15 @@ const Footer = () => {
       </div>
       <Link
         href={"https://calendly.com/mouhamadg404/discuter-de-mon-projet"}
-        className="border-op w-full flex flex-col justify-center items-center bg-white hover:bg-transparent ease-in-out duration-150 text-background hover:text-white"
+        className="border-op w-full flex flex-col justify-center items-center hover:bg-white bg-transparent ease-in-out duration-150 hover:text-background text-white"
       >
         <Image
           src={`/assets/calendly.svg`}
           width={200}
-          height={100}
+          height={10}
           alt={"calendly"}
           className="rounded-full object-cover"
         />
-        <span className="font-semibold">Let's make a call</span>
       </Link>
     </footer>
   );

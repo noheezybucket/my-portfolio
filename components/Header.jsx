@@ -6,9 +6,12 @@ const Header = () => {
     <header className="box-center flex justify-between items-center my-4 glassmorphism py-4">
       <h1 className="font-bold py-2">mouhamad</h1>
       <nav>
-        <ul className="flex gap-5">
+        <ul className="flex gap-3 py-2">
           <li>
             <Link href={"/"}>home</Link>
+          </li>
+          <li>
+            <Link href={"/projects"}>projects</Link>
           </li>
           <li>
             <Link href={"/blog"}>blog</Link>
