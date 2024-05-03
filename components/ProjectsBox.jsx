@@ -41,10 +41,10 @@ const ProjectsBox = () => {
             <>
               <Link
                 href={project.link}
-                className="flex  gap-5 rounded-xl hover:translate-x-2 duration-200"
+                className="flex flex-col md:flex-row  gap-5 rounded-xl hover:translate-x-5 duration-200"
                 key={project.id}
               >
-                <div className="w-4/12">
+                <div className="w-8/12 md:w-3/12">
                   <img
                     src={`/assets/${project.image}`}
                     className="object-cover rounded-xl border border-white border-opacity-20"
@@ -76,8 +76,9 @@ const ProjectsBox = () => {
           );
         })}
       </div>
-      <Link href={"/projects"} className="btn-primary">
-        See all projects
+      <Link href={"/projects"} className="underline flex justify-center py-4">
+        See all projects{" "}
+        <img src="/assets/ext-link.svg" alt="" className="ext-link-icon" />
       </Link>
     </section>
   );

@@ -61,6 +61,10 @@ hr {
   @apply border-op;
 }
 
+.ext-link-icon {
+  @apply w-5;
+}
+
 /* animation  */
 .background-animate {
   background-size: 400%;

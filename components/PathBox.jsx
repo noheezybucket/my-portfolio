@@ -1,35 +1,36 @@
 import React from "react";
 import SectionHeader from "./SectionHeader";
 import Image from "next/image";
+import Link from "next/link";
 
 const education = [
   {
     id: 1,
     length: "Oct 2023 - Oct 2024",
     school: "Higher Institute of Computer Science",
-    description:
-      "I did an Software Engineer curriculum and graduated after 2 years as a IT Technician",
+    description: "Ma description, que je vais, écrire ici, sans problème",
+    link: "",
   },
   {
     id: 2,
     length: "Oct 2020 - Oct 2022",
     school: "Polytechnical School of Dakar",
-    description:
-      "I did an Software Engineer curriculum and graduated after 2 years as a IT Technician",
+    description: "",
+    link: "",
   },
   {
     id: 3,
-    length: "Oct 2020 - Oct 2022",
+    length: "",
     school: "JavaScript Algo & Struct Certificate",
-    description:
-      "I did an Software Engineer curriculum and graduated after 2 years as a IT Technician",
+    description: "",
+    link: "https://www.freecodecamp.org/certification/koda_/javascript-algorithms-and-data-structures",
   },
   {
     id: 4,
-    length: "Oct 2020 - Oct 2022",
+    length: "",
     school: "Responsive Web Design Certificate",
-    description:
-      "I did an Software Engineer curriculum and graduated after 2 years as a IT Technician",
+    description: "",
+    link: "https://www.freecodecamp.org/certification/koda_/responsive-web-design",
   },
 ];
 
@@ -39,7 +40,7 @@ const experiences = [
     entreprise: "Galsen Digital",
     length: "Oct 2022 - now",
     image: "gda.png",
-    description: "Description here",
+    description: "Ma description, que je vais, écrire ici, sans problème",
   },
   {
     id: 2,
@@ -67,12 +68,33 @@ const PathBox = () => {
               <div>
                 <div className="flex flex-col sm:flex-row justify-between">
                   <span className="text-xl font-semibold flex items-center gap-2">
-                    <span className="w-3 h-3 bg-orange-500 block rounded-full"></span>
+                    {/* <span className="w-3 h-3 bg-orange-500 block rounded-full"></span> */}
                     {edu.school}
                   </span>
-                  <span className="text-sm">{edu.length}</span>
+                  <span className="text-sm">
+                    {edu.length ? (
+                      edu.length
+                    ) : (
+                      <Link
+                        href={edu.link}
+                        target="_blank"
+                        className="flex items-end underline"
+                      >
+                        See certification{" "}
+                        <img
+                          src="/assets/ext-link.svg"
+                          alt=""
+                          className="ext-link-icon"
+                        />
+                      </Link>
+                    )}
+                  </span>
                 </div>
-                <p className="text-sm">{edu.description}</p>
+                <p className="text-sm">
+                  {edu.description.split(",").map((descli) => {
+                    return <li key={edu.id}>{descli}</li>;
+                  })}
+                </p>
               </div>
               {education.length != edu.id && <hr className="my-5" />}
             </div>
@@ -108,7 +130,11 @@ const PathBox = () => {
                     </span>
                     <span className="text-sm">{xp.length}</span>
                   </div>
-                  <ul className="text-sm">{xp.description}</ul>
+                  <p className="text-sm">
+                    {xp.description.split(",").map((descli) => {
+                      return <li key={xp.id}>{descli}</li>;
+                    })}
+                  </p>
                 </div>
               </div>
               {experiences.length != xp.id && <hr className="my-5" />}

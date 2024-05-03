@@ -4,7 +4,7 @@ import React from "react";
 const Header = () => {
   return (
     <header className="box-center flex justify-between items-center my-4 glassmorphism py-4">
-      <h1 className="font-bold py-2">mouhamad</h1>
+      <h1 className="font-bold py-2">SMG</h1>
       <nav>
         <ul className="flex gap-3 py-2">
           <li>
@@ -16,9 +16,9 @@ const Header = () => {
           <li>
             <Link href={"/blog"}>blog</Link>
           </li>
-          <li>
+          {/* <li>
             <Link href={"/gallery"}>gallery</Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>
