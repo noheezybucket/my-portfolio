@@ -12,17 +12,6 @@ const projects = [
     link: "https://rrtacu.com",
     tools: [{ id: 1, name: "WordPress", icon: "wordpress" }],
   },
-  {
-    id: 2,
-    title: "Ndoura Traiteur",
-    description: "",
-    image: "ndoura.png",
-    link: "https://ndouratraiteur.com",
-    tools: [
-      { id: 1, name: "WordPress", icon: "wordpress" },
-      { id: 2, name: "Elementor", icon: "elementor" },
-    ],
-  },
 ];
 
 const ProjectsBox = () => {

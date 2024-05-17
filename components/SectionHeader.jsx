@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const SectionHeader = ({
@@ -21,7 +22,16 @@ const SectionHeader = ({
       </div>
 
       <div>
-        {buttonLink && <button className="btn-primary">{buttonName}</button>}
+        {buttonLink && (
+          <Link
+            href={buttonLink}
+            target="_blank"
+            className="flex items-end underline"
+          >
+            {buttonName}{" "}
+            <img src="/assets/ext-link.svg" alt="" className="ext-link-icon" />
+          </Link>
+        )}
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ const Home = () => {
     <section>
       <div className="glassmorphism flex justify-between items-center">
         <div className="flex flex-col gap-1">
-          <h1 className="font-semibold text-xl lg:text-3xl">
+          <h1 className="font-semibold text-2xl lg:text-3xl">
             Salam, I am Mouhamad
           </h1>
           <span className="text-sm lg:text-lg">Software Engineer</span>
@@ -23,10 +23,10 @@ const Home = () => {
         <div className="flex flex-col justify-center gap-2 border border-op rounded-xl p-2  bg-background">
           <Image
             src={"/assets/me.jpg"}
-            width={130}
-            height={130}
+            width={200}
+            height={200}
             alt="me"
-            className="rounded-xl object-cover"
+            className="rounded-xl object-cover grayscale"
           />
           <div className="flex flex-row items-center justify-center gap-3">
             <Link href={"https://linkedin.com"}>
