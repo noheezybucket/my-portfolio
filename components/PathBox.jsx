@@ -9,7 +9,7 @@ const PathBox = () => {
       <SectionHeader
         icon={"education"}
         title={"Education"}
-        description={""}
+        description={"About my curriculum"}
         buttonLink={"#"}
         buttonName={"Get Resume"}
       />

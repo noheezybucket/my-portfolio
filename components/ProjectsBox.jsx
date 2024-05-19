@@ -4,14 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 const projects = [
-  {
-    id: 1,
-    title: "RRTACU",
-    description: "",
-    image: "rrtacu.png",
-    link: "https://rrtacu.com",
-    tools: [{ id: 1, name: "WordPress", icon: "wordpress" }],
-  },
+  // {
+  //   id: 1,
+  //   title: "RRTACU",
+  //   description: "",
+  //   image: "rrtacu.png",
+  //   link: "https://rrtacu.com",
+  //   tools: [{ id: 1, name: "WordPress", icon: "wordpress" }],
+  // },
 ];
 
 const ProjectsBox = () => {
@@ -20,11 +20,14 @@ const ProjectsBox = () => {
       <SectionHeader
         icon={"projects"}
         title={"Projects"}
-        description={"I will describe my projects here"}
+        description={"Some of the great work i did"}
         // buttonLink={"/projects"}
         // buttonName={"See Everything"}
       />
       <div className="gap-5 border-op p-2">
+        {projects.length < 1 && (
+          <p className="text-center">Projects will be updated very soon 👏</p>
+        )}
         {projects.map((project) => {
           return (
             <>

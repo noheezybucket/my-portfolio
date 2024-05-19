@@ -75,8 +75,8 @@ const TechList = () => {
     <section>
       <SectionHeader
         icon={"technos"}
-        title={"Tools that I use"}
-        description={"I will describe my skills here"}
+        title={"Tech Stack"}
+        description={"Technologies I worked with"}
       />
       <div className="flex gap-3 flex-wrap">
         {skills.map((skill) => {

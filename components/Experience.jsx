@@ -18,14 +18,6 @@ const experiences = [
     description:
       "Currently working there as a Software Engineer, working both on Front & Back, Developped several web sites & apps built with WordPress - React/Angular/Tailwind - MERN Stack..., Participated to the creation of multiple mobile apps",
   },
-  {
-    id: 3,
-    entreprise: "wedev.tech",
-    length: "April 2022 - now",
-    image: "wedev.png",
-    description:
-      "CEO & Founder, Our goal is to provide affordable trainings for african youth & entrepreneurs, We are currently building our platform little by little, We used to propose web development/design services but we changed our perspective",
-  },
 ];
 
 const Experience = () => {
