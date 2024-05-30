@@ -12,7 +12,7 @@ const experiences = [
   },
   {
     id: 2,
-    entreprise: "Galsen Digital",
+    entreprise: "GALSEN DIGITAL",
     length: "Jul 2022 - now",
     image: "gda.png",
     description:
@@ -25,8 +25,8 @@ const Experience = () => {
     <div className="border-op p-2 space-y-5">
       {experiences.map((xp, index) => {
         return (
-          <div className="bg-background" key={index}>
-            <div className="flex gap-5">
+          <div className="bg-background space-y-5" key={index}>
+            <div className="flex gap-5 items-center">
               <Image
                 src={`/assets/${xp.image}`}
                 width={50}
@@ -39,12 +39,12 @@ const Experience = () => {
                   <span className="text-xl font-semibold">{xp.entreprise}</span>
                   <span className="text-sm">{xp.length}</span>
                 </div>
-                <div className="text-sm">
-                  {xp.description.split(",").map((descli, index) => {
-                    return descli && <li key={index}>{descli}</li>;
-                  })}
-                </div>
               </div>
+            </div>
+            <div className="text-sm list-none space-y-1">
+              {xp.description.split(",").map((descli, index) => {
+                return descli && <li key={index}>- {descli}</li>;
+              })}
             </div>
             {experiences.length != xp.id && <hr className="my-5" />}
           </div>

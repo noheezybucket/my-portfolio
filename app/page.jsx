@@ -20,15 +20,15 @@ const Home = () => {
           </span>
         </div>
 
-        <div className="flex flex-col justify-center gap-2 border border-op rounded-xl p-2  bg-background">
+        <div className="flex flex-col justify-center gap-2 border border-op rounded-xl p-2  bg-background relative">
           <Image
-            src={"/assets/me.jpg"}
-            width={200}
-            height={200}
+            src={"/assets/mouhamad_gueye.jpg"}
+            width={170}
+            height={170}
             alt="me"
-            className="rounded-xl object-cover grayscale"
+            className="rounded-xl object-cover"
           />
-          <div className="flex flex-row items-center justify-center gap-3">
+          <div className="flex flex-row items-center justify-center gap-3 absolute bottom-5 left-1/2 translate-x-[-50%]">
             <Link href={"https://linkedin.com"}>
               <Image
                 src={"/assets/linkedin.svg"}
