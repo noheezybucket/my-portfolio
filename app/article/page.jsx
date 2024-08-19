@@ -5,9 +5,9 @@ const Page = () => {
     return (
         <div className={'glassmorphism'}>
             <div className={'space-y-3'}>
-                <div className={'glassmorphism min-h-[20vh] space-y-4 flex justify-center items-center flex-col'}>
-                    <h1 className={'text-4xl font-semibold text-center'}>How to boost your productivity in 2024 🚀🤌🏾</h1>
-                    <div className={'flex justify-between gap-5'}>
+                <div className={'bg-[url("https://cdn.prod.website-files.com/622b2fcc29fc56492b771cb8/65f98c957daeda28bfcbe86d_Layer_1%20(6).png")] bg-cover glassmorphism min-h-[20vh] space-y-4 flex justify-center items-center flex-col'}>
+                    <h1 className={'text-4xl font-semibold text-center bg-white text-black rounded-lg p-1 '}>How to boost your productivity in 2024 🚀🤌🏾</h1>
+                    <div className={'flex justify-between gap-5 bg-black text-white rounded-lg p-1'}>
                         <span>19 August 2024</span>
                         <span>10 minutes read</span>
                     </div>
@@ -62,9 +62,7 @@ const Page = () => {
 
                     <div className={'blog-div'}>
                         <h2 className={'blog-title'}>2️⃣. Focus techniques</h2>
-                        <p>
-                            some focus techniques you can try
-                        </p>
+
                         <ul className={'blog-ul'}>
                             <li>Pomodoro Technique - Work in 25-minute intervals with 5-minute breaks. After four
                                 intervals, take a longer break. This helps maintain focus and prevent burnout.
@@ -84,9 +82,7 @@ const Page = () => {
                     <hr/>
                     <div className={'blog-div'}>
                         <h2 className={'blog-title'}>3️⃣. Organization tools</h2>
-                        <p>
-                            Good sleep is vital for cognitive function and productivity.
-                        </p>
+
                         <ul className={'blog-ul'}>
                             <li>Trello: Manage tasks and projects using boards, lists, and cards. Great for staying
                                 organized and tracking progress.
@@ -100,9 +96,7 @@ const Page = () => {
                     <hr/>
                     <div className={'blog-div'}>
                         <h2 className={'blog-title'}>4️⃣. Focusing tools</h2>
-                        <p>
-                            Good sleep is vital for cognitive function and productivity.
-                        </p>
+
                         <ul className={'blog-ul'}>
                             <li>Opal</li>
                             <li>Flow</li>
@@ -112,9 +106,7 @@ const Page = () => {
 
                     <div className={'blog-div'} id={'resources'}>
                         <h2 className={'blog-title'}>5️⃣. Resources</h2>
-                        <p>
-                            Good sleep is vital for cognitive function and productivity.
-                        </p>
+
                         <ul className={'list-inside list-disc space-y-2'}>
                             <li>Andrew Huberman</li>
                             <li>Fabien Olicard</li>

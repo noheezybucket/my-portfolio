@@ -17,12 +17,12 @@ const Blog = () => {
         <div
             className="flex flex-col md:flex-row  gap-5 rounded-xl hover:scale-[0.95] duration-300 glassmorphism"
         >
-          {/*<div className={'md:w-2/12'}>*/}
-          {/*  <img*/}
-          {/*      src={`/assets/mog.png`}*/}
-          {/*      className="object-cover rounded-xl border border-white border-opacity-20"*/}
-          {/*      alt={'proj'}/>*/}
-          {/*</div>*/}
+          <div className={'md:w-2/12'}>
+            <img
+                src={`https://cdn.prod.website-files.com/622b2fcc29fc56492b771cb8/65f98c957daeda28bfcbe86d_Layer_1%20(6).png`}
+                className="object-cover rounded-xl border border-white border-opacity-20"
+                alt={'proj'}/>
+          </div>
 
           <div className="flex flex-col gap-2 md:w-10/12">
             <div className={'flex justify-between'}>
