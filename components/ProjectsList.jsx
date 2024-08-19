@@ -36,13 +36,13 @@ const projects = [
 
 ];
 
-const ProjectsList = () => {
+const ProjectsList = ({limit}) => {
     return (
         <div className="gap-5 border-op p-2">
             {projects.length < 1 && (
                 <p className="text-center">Projects will be updated very soon 👏</p>
             )}
-            {projects.map((project, index) => {
+            {projects.slice(0,limit).map((project, index) => {
                 return (
                     <div
                         key={index}

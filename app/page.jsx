@@ -13,7 +13,7 @@ const Home = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [typingSpeed, setTypingSpeed] = useState(150);
 
-    const words = ["Software Engineer", "Design Enthusiast", "Athlete"];
+    const words = ["Software Engineer", "UX/UI Design Enthusiast", "BJJ/Basketball Athlete"];
 
     useEffect(() => {
         const handleTyping = () => {
@@ -29,7 +29,7 @@ const Home = () => {
             setTypingSpeed(isDeleting ? 50 : 150);
 
             if (!isDeleting && text === fullText) {
-                setTimeout(() => setIsDeleting(true), 500);
+                setTimeout(() => setIsDeleting(true), 100);
             } else if (isDeleting && text === "") {
                 setIsDeleting(false);
                 setLoopNum(loopNum + 1);
