@@ -50,7 +50,7 @@ body {
 }
 
 .tools {
-  @apply rounded flex gap-1 items-center  p-2 border-op;
+  @apply rounded flex gap-1 items-center  p-1 border-op;
 }
 
 .tool-name {
@@ -112,4 +112,16 @@ hr {
   100% {
     opacity: 1;
   }
+}
+
+.blog-title{
+  @apply text-xl font-semibold
+}
+
+.blog-div {
+  @apply space-y-2
+}
+
+.blog-ul {
+  @apply list-inside list-disc space-y-2 pl-4
 }
