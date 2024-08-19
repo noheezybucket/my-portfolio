@@ -1,9 +1,19 @@
 import React from "react";
+import ProjectsList from "@components/ProjectsList";
+import SectionHeader from "@components/SectionHeader";
 
 const Projects = () => {
   return (
     <section className="glassmorphism">
-      <h1 className="text-center">Projects will be updated very soon 👏 </h1>
+
+        <SectionHeader
+            icon={"projects"}
+            title={"Projects"}
+            description={"Some of the great work i did"}
+            // buttonLink={"/projects"}
+            // buttonName={"See Everything"}
+        />
+      <ProjectsList/>
     </section>
   );
 };

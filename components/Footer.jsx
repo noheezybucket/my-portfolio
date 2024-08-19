@@ -60,7 +60,7 @@ const Footer = () => {
       </div>
       <Link
         href={"https://calendly.com/mouhamadg404/discuter-de-mon-projet"}
-        className="border-op w-full flex flex-col justify-center items-center hover:bg-white bg-transparent ease-in-out duration-300 hover:text-background text-white hover:scale-[0.9]"
+        className="border-op w-full flex flex-col justify-center items-center hover:bg-white bg-transparent ease-in-out duration-300 hover:text-background text-white hover:scale-[0.95]"
       >
         <Image
           src={`/assets/calendly.svg`}

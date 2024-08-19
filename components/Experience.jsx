@@ -8,7 +8,7 @@ const experiences = [
     length: "Oct 2023 - now",
     image: "asamaan.jpg",
     description:
-      "Co-founder & Software Engineer, ASAMAAN goal is to redifine the landscape of aerial technology, Our mission is to develop affordable, high performance VTOL drones that redefine the possibilities of aerial mapping - surveillance and tracking",
+      "Co-founder & Software Engineer, ASAMAAN goal is to redifine the landscape of aerial technology, Our mission is to develop affordable high performance VTOL drones that redefine the possibilities of aerial mapping - surveillance and tracking",
   },
   {
     id: 2,

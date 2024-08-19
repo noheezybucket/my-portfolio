@@ -68,7 +68,6 @@ hr {
 /* animation  */
 .background-animate {
   background-size: 400%;
-
   -webkit-animation: AnimationName 10s ease infinite;
   -moz-animation: AnimationName 10s ease infinite;
   animation: AnimationName 10s ease infinite;
@@ -81,5 +80,36 @@ hr {
   }
   50% {
     background-position: 100% 50%;
+  }
+}
+
+.filter-button {
+  @apply border border-white rounded px-2;
+}
+
+.filter-button:hover {
+  @apply bg-white text-black rounded px-2;
+}
+
+.filter-button.active {
+  @apply bg-white text-black rounded px-2;
+}
+
+.blinking-cursor {
+  font-weight: 100;
+  font-size: 1.5rem;
+  color: #333;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

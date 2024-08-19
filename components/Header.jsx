@@ -4,7 +4,8 @@ import React from "react";
 const Header = () => {
   return (
     <header className="box-center flex justify-between items-center my-4 glassmorphism py-4">
-      <img src="/assets/mog.png" alt="" className="w-14" />
+      {/*<img src="/assets/mog.png" alt="" className="w-14" />*/}
+      <h1>Ахмед</h1>
       <nav>
         <ul className="flex gap-3 py-2">
           <li>

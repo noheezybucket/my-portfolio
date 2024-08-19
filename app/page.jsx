@@ -1,30 +1,69 @@
+'use client'
 import PathBox from "@components/PathBox";
 import ProjectsBox from "@components/ProjectsBox";
 import TechList from "@components/TechList";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 const Home = () => {
+    const [text, setText] = useState("");
+    const [index, setIndex] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [loopNum, setLoopNum] = useState(0);
+    const [typingSpeed, setTypingSpeed] = useState(150);
+
+    const words = ["Software Engineer", "Design Enthusiast", "Athlete"];
+
+    useEffect(() => {
+        const handleTyping = () => {
+            const i = loopNum % words.length;
+            const fullText = words[i];
+
+            setText(
+                isDeleting
+                    ? fullText.substring(0, text.length - 1)
+                    : fullText.substring(0, text.length + 1)
+            );
+
+            setTypingSpeed(isDeleting ? 50 : 150);
+
+            if (!isDeleting && text === fullText) {
+                setTimeout(() => setIsDeleting(true), 500);
+            } else if (isDeleting && text === "") {
+                setIsDeleting(false);
+                setLoopNum(loopNum + 1);
+            }
+        };
+
+        const typingTimeout = setTimeout(handleTyping, typingSpeed);
+
+        return () => clearTimeout(typingTimeout);
+    }, [text, isDeleting, typingSpeed, loopNum]);
+
   return (
     <section>
       <div className="glassmorphism flex justify-between items-center">
         <div className="flex flex-col gap-1">
           <h1 className="font-semibold text-2xl lg:text-3xl">
-            Salam, I'm Mouhamad👋
+            Salam, I'm Mouhamad 👋🏾
           </h1>
-          <span className="text-sm lg:text-lg">Software Engineer</span>
-          <span className="text-green-500 flex items-center gap-1 text-sm">
-            <span className="w-3 h-3 bg-green-500 block rounded-full"></span>
-            Let's work together{" "}
+          <span className="text-sm lg:text-lg">{text}<span className="blinking-cursor">|</span></span>
+            <span className="text-green-500 flex items-center gap-1 text-sm">
+                <span className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                </span>
+                <span>Let's work together</span>
+
           </span>
         </div>
 
-        <div className="flex flex-col justify-center gap-2 border border-op rounded-xl p-2  bg-background relative">
-          <Image
-            src={"/assets/mouhamad_gueye.jpg"}
-            width={170}
-            height={170}
+          <div className="flex flex-col justify-center gap-2 border border-op rounded-xl p-2  bg-background relative">
+              <Image
+                  src={"/assets/mouhamad_gueye.jpg"}
+                  width={170}
+                  height={170}
             alt="me"
             className="rounded-xl object-cover"
           />
