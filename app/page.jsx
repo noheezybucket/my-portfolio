@@ -60,8 +60,8 @@ const Home = () => {
         </div>
 
           <div className="flex flex-col justify-center gap-2 border border-op rounded-xl p-2  bg-background relative">
-              <Image
-                  src={"/assets/mouhamad_gueye.jpg"}
+              <img
+                  src={"/assets/smg.jpg"}
                   width={170}
                   height={170}
             alt="me"
@@ -71,8 +71,8 @@ const Home = () => {
             <Link href={"https://linkedin.com"}>
               <Image
                 src={"/assets/linkedin.svg"}
-                width={30}
-                height={30}
+                width={50}
+                height={50}
                 alt="me"
                 className="object-cover"
               />
@@ -80,8 +80,8 @@ const Home = () => {
             <Link href={"https://linkedin.com"}>
               <Image
                 src={"/assets/github.svg"}
-                width={30}
-                height={30}
+                width={50}
+                height={50}
                 alt="me"
                 className="object-cover"
               />
