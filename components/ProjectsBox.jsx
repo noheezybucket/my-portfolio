@@ -14,7 +14,7 @@ const ProjectsBox = () => {
         // buttonLink={"/projects"}
         // buttonName={"See Everything"}
       />
-      <ProjectsList limit={2}/>
+      <ProjectsList limit={4}/>
       <Link href={"/projects"} className="underline flex justify-center py-4">
         See all projects{" "}
         <img src="/assets/ext-link.svg" alt="" className="ext-link-icon" />
