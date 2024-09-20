@@ -116,7 +116,7 @@ const ProjectsList = ({limit}) => {
                 return (
                     <div key={index}>
                         <div className="flex flex-col p-1 border border-white border-opacity-10 gap-5 rounded-xl hover:scale-[0.98] duration-300 ">
-                            <div style={{backgroundColor: project.color}} className={'rounded-lg  flex justify-center items-center'}>
+                            <div className={'rounded-lg  flex justify-center items-center'}>
                                 <img
                                     src={`/assets/projects/${project.image}`}
                                     className="object-cover rounded-lg    border-opacity-20"
@@ -134,7 +134,7 @@ const ProjectsList = ({limit}) => {
                                         <img src="/assets/ext-link.svg" alt="" className="ext-link-icon"/>
                                     </Link>
                                 </div>
-                                <p className={'truncate'}>{project.description}</p>
+                                {/*<p className={'truncate'}>{project.description}</p>*/}
                                 <div className="flex gap-3 flex-wrap">
                                     {project.tools.map((tool,index) => {
                                         return (

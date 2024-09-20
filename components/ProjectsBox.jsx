@@ -12,7 +12,7 @@ const ProjectsBox = () => {
         title={"Projects"}
         description={"Some of the great work i did"}
         buttonLink={"/projects"}
-        buttonName={"See Everything"}
+        buttonName={"All projects"}
       />
       <ProjectsList limit={4}/>
       {/*<Link href={"/projects"} className="underline flex justify-center py-4">*/}
