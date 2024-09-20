@@ -10,8 +10,8 @@ const PathBox = () => {
         icon={"education"}
         title={"Education"}
         description={"About my curriculum"}
-        buttonLink={"#"}
-        buttonName={"Get Resume"}
+        // buttonLink={"#"}
+        // buttonName={"Get Resume"}
       />
       <Education />
 

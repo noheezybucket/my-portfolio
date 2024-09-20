@@ -16,7 +16,7 @@ const experiences = [
     length: "Jul 2022 - now",
     image: "gda.png",
     description:
-      "Currently working there as a Software Engineer, working both on Front & Back, Developped several web sites & apps built with WordPress - React/Angular/Tailwind - MERN Stack..., Participated to the creation of multiple mobile apps",
+      "Software Engineer, Designed & Developped several web sites & apps built with WordPress - React/Angular/Tailwind - MERN Stack..., Has participated in the creation of multiple mobile apps",
   },
 ];
 

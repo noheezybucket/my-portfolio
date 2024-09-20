@@ -5,8 +5,7 @@ const projects = [
     {
         title: "Jaba",
         description: "Jaba is an online platform for selling agricultural crops. It is an initiative to connect local farmers with consumers, providing a convenient and efficient solution for buying and selling fresh, quality produce.",
-        image: "jaba/logo.svg",
-        color:'#272727',
+        image: "jaba/jaba.png",
         link: "projects/jaba",
         tools: [
             { name: "React", icon: "react" },
@@ -17,10 +16,10 @@ const projects = [
     },
     {
         title: "CBurger",
-        description: "CBurger is a online burger ordering & fast-food managemenent platform. It allows the customer to order a burger and the manager is able to treat the order and change the status and notify the customer via email.",
-        image: "cburger/cburger.svg",
+        description: "CBurger is an online burger ordering & fast-food management platform. It allows the customer to order a burger and the manager is able to treat the order and change the status and notify the customer via email.",
+        image: "cburger/cbg.png",
         color:'#FFA800',
-        link: "#",
+        link: "projects/cburger",
         tools: [
             { name: "Angular", icon: "angular" },
             { name: "Laravel", icon: "laravel" },
@@ -29,63 +28,79 @@ const projects = [
     {
         title: "RRTACU",
         description: "A website for the Residence of the Artistic, Cultural and University Tourist Meetings",
-        image: "rrtacu/logo.svg",
-        color: '#084BBB',
+        image: "rrtacu/rrtacu.png",
+        // color: '#084BBB',
         link: "https://rrtacu.com",
         tools: [
             { name: "WordPress", icon: "wordpress" },
             { name: "Elementor", icon: "elementor" },
         ],
+        target : '_blank'
     },
-    {
-        title: "MyButleg",
-        description: "A website for a street clothing brand",
-        image: "mybutleg/logo.png",
-        color: '#4F28EA',
-        link: "https://rrtacu.com",
-        tools: [
-            { name: "WordPress", icon: "wordpress" },
-            { name: "Elementor", icon: "elementor" },
-        ],
-    },
-    {
-        title: "Waxtu Joob",
-        description: "Waxtu joob is a pomodoro app for helping you focus on your work time. It sets a time for work and a time for pause e.g:25/5 (25 mins of work and 5mins of pause)",
-        image: "pomodoro.jpeg",
-        link: "#",
-        tools: [
-            { name: "React", icon: "react" },
-        ],
-    },
-    {
-        title: "Chat app landing page",
-        description: "Waxtu joob is a pomodoro app for helping you focus on your work time. It sets a time for work and a time for pause e.g:25/5 (25 mins of work and 5mins of pause)",
-        image: "chat-app.png",
-        link: "https://noheezybucket.github.io/chat-app-pure-css/",
-        tools: [
-            { name: "HTML", icon: "html" },
-            { name: "Sass", icon: "sass" },
-        ],
-    },
+    // {
+    //     title: "MyButleg",
+    //     description: "A website for a street clothing brand",
+    //     image: "mybutleg/mybutleg.png",
+    //     // color: '#4F28EA',
+    //     link: "https://dev-mybutleg.pantheonsite.io/",
+    //     tools: [
+    //         { name: "WordPress", icon: "wordpress" },
+    //         { name: "Elementor", icon: "elementor" },
+    //     ],
+    //     target : '_blank'
+    //
+    // },
+    // {
+    //     title: "Waxtu Joob",
+    //     description: "Waxtu joob is a pomodoro app for helping you focus on your work time. It sets a time for work and a time for pause e.g:25/5 (25 mins of work and 5mins of pause)",
+    //     image: "waxtu.png",
+    //     link: "#",
+    //     tools: [
+    //         { name: "React", icon: "react" },
+    //     ],
+    // },
     {
         title: "Bookmark",
-        description: "Waxtu joob is a pomodoro app for helping you focus on your work time. It sets a time for work and a time for pause e.g:25/5 (25 mins of work and 5mins of pause)",
+        description: "",
         image: "bookmark/bookmark.png",
-        link: "https://noheezybucket.github.io/chat-app-pure-css/",
+        link: "https://noheezybucket.github.io/bookmark-landing-page/",
         tools: [
             { name: "React", icon: "react" },
             { name: "Tailwind", icon: "tailwind" },
         ],
+        target : '_blank'
     },
     {
         title: "Manage",
-        description: "Waxtu joob is a pomodoro app for helping you focus on your work time. It sets a time for work and a time for pause e.g:25/5 (25 mins of work and 5mins of pause)",
+        description: "",
         image: "manage.png",
-        link: "https://noheezybucket.github.io/chat-app-pure-css/",
+        link: "https://noheezybucket.github.io/manage-landing-page/",
         tools: [
             { name: "React", icon: "react" },
             { name: "Tailwind", icon: "tailwind" },
         ],
+        target : '_blank'
+    },
+    {
+        title: "Chat app landing page",
+        description: "A frontend made with html and css only",
+        image: "chat-app.png",
+        link: "https://noheezybucket.github.io/chat-app-pure-css/",
+        tools: [
+            { name: "Sass", icon: "sass" },
+        ],
+        target : '_blank'
+    },
+    {
+        title: "Fylo",
+        description: "",
+        image: "fylo.png",
+        link: "https://noheezybucket.github.io/fylo-dark-theme-landing-page/",
+        tools: [
+            { name: "React", icon: "react" },
+            { name: "Tailwind", icon: "tailwind" },
+        ],
+        target : '_blank'
     },
 
 
@@ -101,10 +116,10 @@ const ProjectsList = ({limit}) => {
                 return (
                     <div key={index}>
                         <div className="flex flex-col p-1 border border-white border-opacity-10 gap-5 rounded-xl hover:scale-[0.98] duration-300 ">
-                            <div style={{backgroundColor: project.color}} className={'rounded-xl h-[250px] flex justify-center items-center'}>
+                            <div style={{backgroundColor: project.color}} className={'rounded-lg  flex justify-center items-center'}>
                                 <img
                                     src={`/assets/projects/${project.image}`}
-                                    className="object-cover rounded-xl    border-opacity-20"
+                                    className="object-cover rounded-lg    border-opacity-20"
                                     alt={'proj'}/>
                             </div>
 
@@ -114,11 +129,12 @@ const ProjectsList = ({limit}) => {
                                     <Link
                                         href={project.link}
                                         className="underline flex justify-center"
-                                        key={project.id}>
-                                        More details
+                                        key={project.id} target={project.target}>
+                                        See more
                                         <img src="/assets/ext-link.svg" alt="" className="ext-link-icon"/>
                                     </Link>
                                 </div>
+                                <p className={'truncate'}>{project.description}</p>
                                 <div className="flex gap-3 flex-wrap">
                                     {project.tools.map((tool,index) => {
                                         return (

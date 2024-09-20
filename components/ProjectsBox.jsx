@@ -11,14 +11,14 @@ const ProjectsBox = () => {
         icon={"projects"}
         title={"Projects"}
         description={"Some of the great work i did"}
-        // buttonLink={"/projects"}
-        // buttonName={"See Everything"}
+        buttonLink={"/projects"}
+        buttonName={"See Everything"}
       />
       <ProjectsList limit={4}/>
-      <Link href={"/projects"} className="underline flex justify-center py-4">
-        See all projects{" "}
-        <img src="/assets/ext-link.svg" alt="" className="ext-link-icon" />
-      </Link>
+      {/*<Link href={"/projects"} className="underline flex justify-center py-4">*/}
+      {/*  See all projects{" "}*/}
+      {/*  <img src="/assets/ext-link.svg" alt="" className="ext-link-icon" />*/}
+      {/*</Link>*/}
     </section>
   );
 };

@@ -25,7 +25,7 @@ const SectionHeader = ({
         {buttonLink && (
           <Link
             href={buttonLink}
-            target="_blank"
+            // target="_blank"
             className="flex items-end underline"
           >
             {buttonName}{" "}
