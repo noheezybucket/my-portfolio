@@ -15,7 +15,7 @@ const projects = [
         ],
     },
     {
-        title: "Galsen Digital Projects",
+        title: "All GD Projects",
         description: "You will find all the projects I have worked on at Galsen Digital, a digital agency based in Senegal. The projects include websites, web applications, and other digital solutions that showcase my skills and contributions.",
         image: "gda/gda.png",
         link: "https://gda.sn",
@@ -24,6 +24,28 @@ const projects = [
             { name: "Angular", icon: "angular" },
             { name: "NodeJS", icon: "node" },
             { name: "WordPress", icon: "wordpress" },
+        ],
+    },
+     {
+        title: "STEK Talkshow",
+        description: "You will find all the projects I have worked on at Galsen Digital, a digital agency based in Senegal. The projects include websites, web applications, and other digital solutions that showcase my skills and contributions.",
+        image: "stek/stek.png",
+        link: "https://stektalkshow.com",
+        tools: [
+            { name: "WordPress", icon: "wordpress" },
+            { name: "Elementor", icon: "elementor" },
+
+        ],
+    },
+    {
+        title: "DNA",
+        description: "You will find all the projects I have worked on at Galsen Digital, a digital agency based in Senegal. The projects include websites, web applications, and other digital solutions that showcase my skills and contributions.",
+        image: "dna/dna.png",
+        link: "https://dakarnetworkangels.com",
+        tools: [
+            { name: "WordPress", icon: "wordpress" },
+            { name: "Elementor", icon: "elementor" },
+
         ],
     },
     // {
@@ -137,7 +159,7 @@ const ProjectsList = ({limit}) => {
 
                             <div className="flex flex-col gap-2">
                                 <div className={'flex justify-between'}>
-                                    <h3 className="text-2xl font-semibold">{project.title}</h3>
+                                    <h3 className="text-xl font-semibold">{project.title}</h3>
                                     <Link
                                         href={project.link}
                                         className="underline flex justify-center"
