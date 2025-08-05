@@ -15,28 +15,40 @@ const projects = [
         ],
     },
     {
-        title: "CBurger",
-        description: "CBurger is an online burger ordering & fast-food management platform. It allows the customer to order a burger and the manager is able to treat the order and change the status and notify the customer via email.",
-        image: "cburger/cbg.png",
-        color:'#FFA800',
-        link: "projects/cburger",
+        title: "Galsen Digital Projects",
+        description: "You will find all the projects I have worked on at Galsen Digital, a digital agency based in Senegal. The projects include websites, web applications, and other digital solutions that showcase my skills and contributions.",
+        image: "gda/gda.png",
+        link: "https://gda.sn",
         tools: [
+            { name: "React", icon: "react" },
             { name: "Angular", icon: "angular" },
-            { name: "Laravel", icon: "laravel" },
-        ],
-    },
-    {
-        title: "RRTACU",
-        description: "A website for the Residence of the Artistic, Cultural and University Tourist Meetings",
-        image: "rrtacu/rrtacu.png",
-        // color: '#084BBB',
-        link: "https://rrtacu.com",
-        tools: [
+            { name: "NodeJS", icon: "node" },
             { name: "WordPress", icon: "wordpress" },
-            { name: "Elementor", icon: "elementor" },
         ],
-        target : '_blank'
     },
+    // {
+    //     title: "CBurger",
+    //     description: "CBurger is an online burger ordering & fast-food management platform. It allows the customer to order a burger and the manager is able to treat the order and change the status and notify the customer via email.",
+    //     image: "cburger/cbg.png",
+    //     color:'#FFA800',
+    //     link: "projects/cburger",
+    //     tools: [
+    //         { name: "Angular", icon: "angular" },
+    //         { name: "Laravel", icon: "laravel" },
+    //     ],
+    // },
+    // {
+    //     title: "RRTACU",
+    //     description: "A website for the Residence of the Artistic, Cultural and University Tourist Meetings",
+    //     image: "rrtacu/rrtacu.png",
+    //     // color: '#084BBB',
+    //     link: "https://rrtacu.com",
+    //     tools: [
+    //         { name: "WordPress", icon: "wordpress" },
+    //         { name: "Elementor", icon: "elementor" },
+    //     ],
+    //     target : '_blank'
+    // },
     // {
     //     title: "MyButleg",
     //     description: "A website for a street clothing brand",
