@@ -8,7 +8,7 @@ const experiences = [
     length: "Oct 2025 - now",
     image: "dican.png",
     description:
-        "Collaborator-style contract, Develop websites with WordPress, UX/UI Design with Figma",
+      "Collaborator-style contract, Develop websites with WordPress, UX/UI Design with Figma",
   },
   {
     id: 2,
@@ -18,15 +18,6 @@ const experiences = [
     description:
       "Founding Developer, Leading a team of developers and designers to deliver high-quality web solutions for clients, Ensuring projects are completed on time and within budget while maintaining client satisfaction.",
   },
-  // {
-  //   id: 2,
-  //   entreprise: "ASAMAAN",
-  //   length: "Oct 2023 - now",
-  //   image: "asamaan.jpg",
-  //   description:
-  //     "Co-founder & Software Engineer, PROJECT PAUSED FOR THE MOMENT 🥲",
-  // },
-
   {
     id: 3,
     entreprise: "GALSEN DIGITAL",
@@ -39,31 +30,48 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <div className="border-op p-2 space-y-5">
+    <div className="space-y-8">
       {experiences.map((xp, index) => {
         return (
-          <div className="bg-background space-y-5 text-foreground" key={index}>
-            <div className="flex gap-2 items-center">
+          <div
+            key={xp.id}
+            className="space-y-3"
+            style={
+              index !== experiences.length - 1
+                ? {
+                    paddingBottom: "2rem",
+                    borderBottom: "1px solid var(--border)",
+                  }
+                : undefined
+            }
+          >
+            <div className="flex items-center gap-3">
               <Image
                 src={`/assets/${xp.image}`}
-                width={50}
-                height={50}
-                className="rounded-xl max-h-[50px]"
-                alt={xp.image}
+                width={48}
+                height={48}
+                className="max-h-[48px] rounded-xl"
+                alt={xp.entreprise}
               />
               <div className="w-full">
-                <div className="flex flex-col lg:flex-row  justify-between">
-                  <span className="text-xl font-semibold">{xp.entreprise}</span>
-                  <span className="text-xs">{xp.length}</span>
+                <div className="flex flex-col justify-between gap-1 lg:flex-row lg:items-baseline">
+                  <span className="font-display text-xl font-semibold tracking-tight">
+                    {xp.entreprise}
+                  </span>
+                  <span className="text-xs text-muted">{xp.length}</span>
                 </div>
               </div>
             </div>
-            <div className="text-xs list-none space-y-1">
-              {xp.description.split(",").map((descli, index) => {
-                return descli && <li key={index}>- {descli}</li>;
-              })}
-            </div>
-            {experiences.length != xp.id && <hr className="my-5" />}
+            <ul className="space-y-1 text-sm text-muted">
+              {xp.description.split(",").map(
+                (descli, i) =>
+                  descli && (
+                    <li key={i} className="list-none">
+                      — {descli.trim()}
+                    </li>
+                  )
+              )}
+            </ul>
           </div>
         );
       })}

@@ -18,6 +18,11 @@ module.exports = {
         surface: "var(--surface)",
         border: "var(--border)",
         inverse: "var(--inverse)",
+        accent: "var(--accent)",
+      },
+      fontFamily: {
+        sans: ["var(--font-body)", "Outfit", "sans-serif"],
+        display: ["var(--font-display)", "Syne", "sans-serif"],
       },
     },
   },

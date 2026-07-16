@@ -1,77 +1,77 @@
-import React from "react";
-import SectionHeader from "./SectionHeader";
 import Image from "next/image";
 import Link from "next/link";
 
+const EMAIL = "seydinag023@gmail.com";
+
 const socials = [
   {
-    id: 1,
     name: "LinkedIn",
-    link: "https://www.linkedin.com/in/muhammadguey",
-    icon: "linkedin.svg",
+    href: "https://www.linkedin.com/in/muhammadguey",
+    icon: "/assets/linkedin.svg",
   },
   {
-    id: 2,
-    name: "Email",
-    link: "mailto:seydinag023gmail.com",
-    icon: "mailme.svg",
+    name: "GitHub",
+    href: "https://github.com/ahmadgueye",
+    icon: "/assets/github.svg",
   },
 ];
+
 const Footer = () => {
   return (
-    <footer className="box-center glassmorphism flex flex-col md:flex-row justify-between gap-2">
-      <div className="w-full">
-        <SectionHeader
-          icon={"contact"}
-          title={"Contact Me"}
-          description={"Let's talk about your project now ! 📩"}
-        />
-        <div className="border-op p-2">
-          <ul className="space-y-2">
-            {socials.map((social, index) => {
-              return (
-                <>
-                  <li key={index}>
-                    <Link
-                      href={social.link}
-                      target="_blank"
-                      className="flex gap-2  py-1 items-center hover:translate-x-5 duration-200 "
-                    >
-                      <Image
-                        src={`/assets/socials/${social.icon}`}
-                        width={30}
-                        height={30}
-                        alt={social.name}
-                        className="theme-icon-invert"
-                      />
-                      <span className="text-sm">{social.name}</span>
-                      <img
-                        src="/assets/ext-link.svg"
-                        alt=""
-                        className="ext-link-icon theme-icon-invert"
-                      />
-                    </Link>
-                  </li>
-                  {socials.length != social.id && <hr className="my-5" />}
-                </>
-              );
-            })}
-          </ul>
+    <footer className="box-center site-section">
+      <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-3 sm:max-w-lg">
+          <p className="text-sm tracking-wide text-muted">Contact</p>
+          <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">
+            Let&apos;s talk about your project
+          </h2>
+          <p className="text-sm leading-relaxed text-muted">
+            Prefer email? Reach me directly — I usually reply within a day.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-wrap items-center gap-3">
+            <Link href={`mailto:${EMAIL}`} className="btn-cta">
+              Email me
+            </Link>
+            <a
+              href={`mailto:${EMAIL}`}
+              className="text-sm text-muted transition-colors hover:text-foreground"
+            >
+              {EMAIL}
+            </a>
+          </div>
+
+          <div className="flex items-center gap-2">
+            {socials.map((social) => (
+              <Link
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-lg border-op transition-colors hover:bg-surface"
+                aria-label={social.name}
+              >
+                <Image
+                  src={social.icon}
+                  width={20}
+                  height={20}
+                  alt=""
+                  className="theme-icon-invert"
+                />
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between border-t border-[color:var(--border)] pt-6">
+          <p className="text-xs text-muted">
+            © {new Date().getFullYear()} Muhammad Gueye
+          </p>
+          <p className="text-xs text-muted">Software Engineer</p>
         </div>
       </div>
-      <Link
-        href={"https://calendly.com/mouhamadg404/discuter-de-mon-projet"}
-        className="border-op w-full flex flex-col justify-center items-center bg-transparent text-foreground ease-in-out duration-300 hover:bg-foreground hover:text-background hover:scale-[0.95]"
-      >
-        <Image
-          src={`/assets/calendly.svg`}
-          width={200}
-          height={10}
-          alt={"calendly"}
-          className="rounded-full object-cover"
-        />
-
-      </Link>
     </footer>
   );
 };

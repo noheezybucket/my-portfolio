@@ -1,0 +1,70 @@
+import Image from "next/image";
+import Link from "next/link";
+
+const EMAIL = "seydinag023@gmail.com";
+
+const Hero = () => {
+  return (
+    <section className="hero site-section">
+      <div className="flex flex-col-reverse items-center justify-between gap-10 sm:flex-row sm:items-end">
+        <div className="hero-copy flex w-full flex-col gap-4 sm:max-w-[58%]">
+          <p className="text-sm tracking-wide text-muted">Software Engineer</p>
+          <h1 className="font-display text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl">
+            Muhammad
+          </h1>
+          <p className="max-w-md text-base leading-relaxed text-muted">
+            I design and ship web experiences
+            — 40+ projects delivered for agencies and founders.
+          </p>
+          <div className="flex flex-wrap items-center gap-3 pt-2">
+            <Link href={`mailto:${EMAIL}`} className="btn-cta">
+              Email me
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/muhammadguey"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border-op transition-colors hover:bg-surface"
+              aria-label="LinkedIn"
+            >
+              <Image
+                src="/assets/linkedin.svg"
+                width={20}
+                height={20}
+                alt=""
+                className="theme-icon-invert"
+              />
+            </Link>
+            <Link
+              href="https://github.com/ahmadgueye"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border-op transition-colors hover:bg-surface"
+              aria-label="GitHub"
+            >
+              <Image
+                src="/assets/github.svg"
+                width={20}
+                height={20}
+                alt=""
+                className="theme-icon-invert"
+              />
+            </Link>
+          </div>
+        </div>
+
+        <div className="hero-photo shrink-0">
+          <img
+            src="/assets/me.webp"
+            width={200}
+            height={200}
+            alt="Muhammad Gueye"
+            className="h-44 w-44 rounded-2xl object-cover md:h-52 md:w-52"
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;

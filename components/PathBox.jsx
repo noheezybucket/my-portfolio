@@ -5,25 +5,26 @@ import Experience from "./Experience";
 
 const PathBox = () => {
   return (
-    <div>
-      <SectionHeader
-        icon={"education"}
-        title={"Education"}
-        description={"About my curriculum"}
-        // buttonLink={"#"}
-        // buttonName={"Get Resume"}
-      />
-      <Education />
+    <div className="space-y-12">
+      <div>
+        <SectionHeader
+          title={"Education"}
+          description={"Degrees and certifications"}
+        />
+        <div className="section-panel">
+          <Education />
+        </div>
+      </div>
 
-      <br />
-
-      <SectionHeader
-        icon={"experience"}
-        title={"Experience"}
-        description={"Latest news on top 😃 "}
-      />
-
-      <Experience />
+      <div>
+        <SectionHeader
+          title={"Experience"}
+          description={"Where I've been building lately"}
+        />
+        <div className="section-panel">
+          <Experience />
+        </div>
+      </div>
     </div>
   );
 };

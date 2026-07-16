@@ -1,84 +1,95 @@
 import Link from "next/link";
-import React from "react";
 
-const education = [
+const degrees = [
   {
     id: 1,
-    length: "Oct 2023 - Oct 2024",
+    title: "Software Engineering Bachelor's degree",
     school: "Higher Institute of Computer Science",
-    description: "Software Engineering Bachelor's degree",
-    link: "",
+    period: "Oct 2023 — Oct 2024",
   },
   {
     id: 2,
-    length: "Oct 2020 - Oct 2022",
+    title: "Software Engineering Technical degree",
     school: "Polytechnical School of Dakar",
-    description: "Software Engineering 2-year Technical degree",
-    link: "",
+    period: "Oct 2020 — Oct 2022",
+  },
+];
+
+const certificates = [
+  {
+    id: 1,
+    title: "JavaScript Algorithms & Data Structures",
+    issuer: "freeCodeCamp",
+    href: "https://www.freecodecamp.org/certification/koda_/javascript-algorithms-and-data-structures",
   },
   {
-    id: 3,
-    length: "",
-    school: "JavaScript Algo & Data Structures Certificate",
-    description: "Delivered by freeCodeCamp",
-    link: "https://www.freecodecamp.org/certification/koda_/javascript-algorithms-and-data-structures",
-  },
-  {
-    id: 4,
-    length: "",
-    school: "Responsive Web Design Certificate",
-    description: "Delivered by freeCodeCamp",
-    link: "https://www.freecodecamp.org/certification/koda_/responsive-web-design",
+    id: 2,
+    title: "Responsive Web Design",
+    issuer: "freeCodeCamp",
+    href: "https://www.freecodecamp.org/certification/koda_/responsive-web-design",
   },
 ];
 
 const Education = () => {
   return (
-    <div className="border-op my-5 p-2">
-      {education.map((edu, index) => {
-        return (
-          <div key={index}>
-            <div>
-              <div className="flex flex-col sm:flex-row justify-between">
-                <span className="text-md font-semibold flex items-center gap-2">
-                  {/* <span className="w-3 h-3 bg-orange-500 block rounded-full"></span> */}
-                  {edu.school}
-                </span>
-                <span className="text-xs">
-                  {edu.length ? (
-                    edu.length
-                  ) : (
-                    <Link
-                      href={edu.link}
-                      target="_blank"
-                      className="flex items-end underline"
-                    >
-                      See certification{" "}
-                      <img
-                        src="/assets/ext-link.svg"
-                        alt=""
-                        className="ext-link-icon theme-icon-invert"
-                      />
-                    </Link>
-                  )}
-                </span>
-              </div>
-              <div className="text-xs">
-                {edu.description.split(",").map((descli, index) => {
-                  return (
-                    descli && (
-                      <li key={index} className="list-none">
-                        {descli}
-                      </li>
-                    )
-                  );
-                })}
-              </div>
+    <div className="space-y-10">
+      <ul className="space-y-6">
+        {degrees.map((degree, index) => (
+          <li
+            key={degree.id}
+            className={
+              index !== degrees.length - 1
+                ? "border-b pb-6"
+                : ""
+            }
+            style={
+              index !== degrees.length - 1
+                ? { borderColor: "var(--border)" }
+                : undefined
+            }
+          >
+            <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+              <h3 className="font-display text-base font-semibold tracking-tight md:text-lg">
+                {degree.title}
+              </h3>
+              <time className="shrink-0 text-xs text-muted">
+                {degree.period}
+              </time>
             </div>
-            {education.length != edu.id && <hr className="my-5" />}
-          </div>
-        );
-      })}
+            <p className="mt-1 text-sm text-muted">{degree.school}</p>
+          </li>
+        ))}
+      </ul>
+
+      <div>
+        <p className="mb-4 text-xs font-medium uppercase tracking-wider text-muted">
+          Certificates
+        </p>
+        <ul className="space-y-3">
+          {certificates.map((cert) => (
+            <li key={cert.id}>
+              <Link
+                href={cert.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col gap-0.5 transition-colors sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"
+              >
+                <span className="text-sm font-medium tracking-tight group-hover:text-accent">
+                  {cert.title}
+                </span>
+                <span className="flex shrink-0 items-center gap-1 text-xs text-muted">
+                  {cert.issuer}
+                  <img
+                    src="/assets/ext-link.svg"
+                    alt=""
+                    className="ext-link-icon theme-icon-invert opacity-50 transition-opacity group-hover:opacity-100"
+                  />
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
