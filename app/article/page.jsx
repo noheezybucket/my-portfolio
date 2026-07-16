@@ -6,8 +6,8 @@ const Page = () => {
         <div className={'glassmorphism'}>
             <div className={'space-y-3'}>
                 <div className={'bg-[url("https://cdn.prod.website-files.com/622b2fcc29fc56492b771cb8/65f98c957daeda28bfcbe86d_Layer_1%20(6).png")] bg-cover glassmorphism min-h-[20vh] space-y-4 flex justify-center items-center flex-col'}>
-                    <h1 className={'text-4xl font-semibold text-center bg-white text-black rounded-lg p-1 '}>How to boost your productivity in 2024 🚀🤌🏾</h1>
-                    <div className={'flex justify-between gap-5 bg-black text-white rounded-lg p-1'}>
+                    <h1 className={'text-4xl font-semibold text-center bg-foreground text-background rounded-lg p-1 '}>How to boost your productivity in 2024 🚀🤌🏾</h1>
+                    <div className={'flex justify-between gap-5 bg-surface text-foreground border-op rounded-lg p-1'}>
                         <span>19 August 2024</span>
                         <span>10 minutes read</span>
                     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { toolIconClassName } from "@lib/toolIcons";
 const projects = [
   {
     title: "Transition Quality",
@@ -218,7 +219,7 @@ const ProjectsList = ({ limit }) => {
       {projects.slice(0, limit).map((project, index) => {
         return (
           <div key={index}>
-            <div className="flex flex-col p-1 border border-white border-opacity-10 gap-5 rounded-xl hover:scale-[0.98] duration-300 ">
+            <div className="flex flex-col p-1 border-op gap-5 rounded-xl hover:scale-[0.98] duration-300 ">
               <div className={"rounded-lg  flex justify-center items-center"}>
                 <img
                   src={`/assets/projects/${project.image}`}
@@ -240,7 +241,7 @@ const ProjectsList = ({ limit }) => {
                     <img
                       src="/assets/ext-link.svg"
                       alt=""
-                      className="ext-link-icon"
+                      className="ext-link-icon theme-icon-invert"
                     />
                   </Link>
                 </div>
@@ -254,6 +255,7 @@ const ProjectsList = ({ limit }) => {
                           width={25}
                           height={25}
                           alt="me"
+                          className={toolIconClassName(tool.icon)}
                         />
                         {/*<span className="tool-name">{tool.name}</span>*/}
                       </span>

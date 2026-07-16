@@ -42,7 +42,7 @@ const Experience = () => {
     <div className="border-op p-2 space-y-5">
       {experiences.map((xp, index) => {
         return (
-          <div className="bg-background space-y-5" key={index}>
+          <div className="bg-background space-y-5 text-foreground" key={index}>
             <div className="flex gap-2 items-center">
               <Image
                 src={`/assets/${xp.image}`}

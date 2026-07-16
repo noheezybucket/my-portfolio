@@ -42,12 +42,13 @@ const Footer = () => {
                         width={30}
                         height={30}
                         alt={social.name}
+                        className="theme-icon-invert"
                       />
                       <span className="text-sm">{social.name}</span>
                       <img
                         src="/assets/ext-link.svg"
                         alt=""
-                        className="ext-link-icon"
+                        className="ext-link-icon theme-icon-invert"
                       />
                     </Link>
                   </li>
@@ -60,7 +61,7 @@ const Footer = () => {
       </div>
       <Link
         href={"https://calendly.com/mouhamadg404/discuter-de-mon-projet"}
-        className="border-op w-full flex flex-col justify-center items-center hover:bg-white bg-transparent ease-in-out duration-300 hover:text-background text-white hover:scale-[0.95]"
+        className="border-op w-full flex flex-col justify-center items-center bg-transparent text-foreground ease-in-out duration-300 hover:bg-foreground hover:text-background hover:scale-[0.95]"
       >
         <Image
           src={`/assets/calendly.svg`}

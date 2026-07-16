@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import SectionHeader from "./SectionHeader";
 import Image from "next/image";
+import { toolIconClassName } from "@lib/toolIcons";
 
 const skills = [
     { name: "ReactJS", icon: "react", category: "frontend" },
@@ -129,10 +130,11 @@ const TechList = () => {
                 width={25}
                 height={25}
                 alt={skill.icon}
+                className={toolIconClassName(skill.icon)}
             />
             {/*<span className="tool-name">{skill.name}</span>*/}
           </span>
-          ))}
+              ))}
         </div>
       </section>
   );

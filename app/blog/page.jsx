@@ -20,7 +20,7 @@ const Blog = () => {
           <div className={'md:w-2/12'}>
             <img
                 src={`https://cdn.prod.website-files.com/622b2fcc29fc56492b771cb8/65f98c957daeda28bfcbe86d_Layer_1%20(6).png`}
-                className="object-cover rounded-xl border border-white border-opacity-20"
+                className="object-cover rounded-xl border-op"
                 alt={'proj'}/>
           </div>
 
@@ -37,7 +37,7 @@ const Blog = () => {
                 className="underline flex text-sm"
             >
               More details
-              <img src="/assets/ext-link.svg" alt="" className="ext-link-icon"/>
+              <img src="/assets/ext-link.svg" alt="" className="ext-link-icon theme-icon-invert"/>
 
             </Link>
           </div>

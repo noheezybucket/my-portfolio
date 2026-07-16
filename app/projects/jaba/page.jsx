@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from "next/link";
 import Image from "next/image";
+import { toolIconClassName } from "@lib/toolIcons";
 
 const project = {
     title: "Jaba",
@@ -21,7 +22,7 @@ const Page = () => {
         <div className={'glassmorphism'}>
             <div>
                 <div className="flex flex-col md:flex-row  gap-5 rounded-xl ">
-                    <div className={'md:w-6/12 flex justify-center items-center border border-white border-opacity-20 rounded-xl'} style={{backgroundColor:'#F37608'}}>
+                    <div className={'md:w-6/12 flex justify-center items-center border-op rounded-xl'} style={{backgroundColor:'#F37608'}}>
                         <img
                             src={`/assets/projects/${project.image}`}
                             className="object-cover rounded-xl "
@@ -55,6 +56,7 @@ const Page = () => {
                                           width={25}
                                           height={25}
                                           alt="me"
+                                          className={toolIconClassName(tool.icon)}
                                       />
                                       <span className="tool-name">{tool.name}</span>
                                     </span>
@@ -69,7 +71,7 @@ const Page = () => {
                 {/*<Link href={'https://www.youtube.com/watch?v=ikis7AUYQn0'} target={'_blank'}>Link to the video</Link>*/}
                 <iframe width="100%" height="571" src="https://www.youtube.com/embed/ikis7AUYQn0"
                         title="Présentation app Jaba" frameBorder="0"
-                        className={'rounded-xl border border-white border-opacity-20'}
+                        className={'rounded-xl border-op'}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             </div>

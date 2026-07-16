@@ -68,7 +68,7 @@ const Home = () => {
 
         </div>
 
-        <div className="flex flex-col justify-center gap-2 border border-op rounded-xl p-2  bg-background ">
+        <div className="flex flex-col justify-center gap-2 border-op rounded-xl p-2 bg-surface">
           <img
               src={"/assets/me.webp"}
               width={170}
@@ -85,8 +85,8 @@ const Home = () => {
                 src={"/assets/linkedin.svg"}
                 width={30}
                 height={30}
-                alt="me"
-                className="object-cover"
+                alt="LinkedIn"
+                className="object-cover theme-icon-invert"
               />
             </Link>
             <Link href={"https://github.com/ahmadgueye"} target={"_blank"}>
@@ -94,8 +94,8 @@ const Home = () => {
                 src={"/assets/github.svg"}
                 width={30}
                 height={30}
-                alt="me"
-                className="object-cover"
+                alt="GitHub"
+                className="object-cover theme-icon-invert"
               />
             </Link>
           </div>

@@ -57,7 +57,7 @@ const Education = () => {
                       <img
                         src="/assets/ext-link.svg"
                         alt=""
-                        className="ext-link-icon"
+                        className="ext-link-icon theme-icon-invert"
                       />
                     </Link>
                   )}
