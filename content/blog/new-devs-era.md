@@ -3,7 +3,7 @@ title: "Developers at the era of AI ? "
 description: "How to still be a dev in this era where AI is taking more space."
 date: "2026-07-17"
 cover: "/assets/blog/devai.webp"
-draft: false
+draft: true
 ---
 
 ## Introduction
