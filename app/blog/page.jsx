@@ -1,8 +1,11 @@
 import Link from "next/link";
 import ProfileSummary from "@components/ProfileSummary";
 import SectionHeader from "@components/SectionHeader";
+import { formatPostDate, getAllPosts } from "@lib/blog";
 
 const Blog = () => {
+  const posts = getAllPosts();
+
   return (
     <>
       <ProfileSummary />
@@ -11,35 +14,54 @@ const Blog = () => {
           title={"Read my blog"}
           description={"I write articles... Well... Sometimes 😂"}
         />
-        <div className="section-panel">
-          <div className="flex flex-col gap-5 md:flex-row md:items-center">
-            <div className="md:w-2/12">
-              <img
-                src={`https://cdn.prod.website-files.com/622b2fcc29fc56492b771cb8/65f98c957daeda28bfcbe86d_Layer_1%20(6).png`}
-                className="rounded-xl object-cover"
-                alt=""
-              />
-            </div>
 
-            <div className="flex flex-col gap-2 md:w-10/12">
-              <h3 className="font-display text-lg font-semibold tracking-tight">
-                How to boost your productivity in 2024 🚀🤌🏾
-              </h3>
-              <div className="flex gap-5 text-xs text-muted">
-                <span>19 August 2024</span>
-                <span>10 minutes read</span>
-              </div>
-              <Link href={"/article"} className="flex text-sm underline">
-                More details
-                <img
-                  src="/assets/ext-link.svg"
-                  alt=""
-                  className="ext-link-icon theme-icon-invert"
-                />
-              </Link>
-            </div>
+        {posts.length === 0 ? (
+          <p className="text-sm text-muted">No articles published yet.</p>
+        ) : (
+          <div className="blog-list">
+            {posts.map((post) => (
+              <article key={post.slug} className="blog-list-item">
+                <div className="flex flex-col gap-5 md:flex-row md:items-center">
+                  {post.cover && (
+                    <div className="md:w-2/12">
+                      <img
+                        src={post.cover}
+                        className="aspect-square w-full rounded-xl object-cover"
+                        alt=""
+                      />
+                    </div>
+                  )}
+
+                  <div className="flex flex-col gap-2 md:w-10/12">
+                    <h3 className="font-display text-lg font-semibold tracking-tight">
+                      {post.title}
+                    </h3>
+                    {post.description && (
+                      <p className="text-sm leading-relaxed text-muted">
+                        {post.description}
+                      </p>
+                    )}
+                    <div className="flex gap-5 text-xs text-muted">
+                      <span>{formatPostDate(post.date)}</span>
+                      <span>{post.readingTime}</span>
+                    </div>
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="flex text-sm underline"
+                    >
+                      More details
+                      <img
+                        src="/assets/ext-link.svg"
+                        alt=""
+                        className="ext-link-icon theme-icon-invert"
+                      />
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
-        </div>
+        )}
       </section>
     </>
   );

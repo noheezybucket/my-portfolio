@@ -13,7 +13,7 @@ const Hero = () => {
             Let&apos;s work together
           </p>
           <h1 className="font-display text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl">
-            Muhammad
+            Ahmad Gueye
           </h1>
           <p className="max-w-md text-base leading-relaxed text-muted">
             I design and ship web experiences

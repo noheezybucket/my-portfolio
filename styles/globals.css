@@ -395,43 +395,74 @@ footer.site-section {
 }
 
 .tools {
-  @apply inline-flex cursor-pointer items-center gap-0 rounded-lg border border-transparent p-2;
+  @apply relative inline-flex cursor-default items-center rounded-lg border border-transparent p-2 outline-none;
   background-color: transparent;
   transition:
-    gap 0.2s ease,
-    padding 0.2s ease,
     border-color 0.2s ease,
     background-color 0.2s ease;
 }
 
 .tools:hover,
 .tools:focus-visible {
-  gap: 0.5rem;
-  padding-inline: 0.625rem;
   border-color: var(--border);
   background-color: var(--surface);
 }
 
-.tool-name {
-  @apply text-xs tracking-tight whitespace-nowrap;
-  max-width: 0;
-  overflow: hidden;
+.tool-tooltip {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.65rem);
+  z-index: 30;
+  display: flex;
+  width: max-content;
+  max-width: 11.5rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.85rem 0.9rem 0.95rem;
+  border-radius: 0.85rem;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
   opacity: 0;
+  transform: translateX(-50%) translateY(0.35rem) scale(0.96);
   transition:
-    max-width 0.2s ease,
-    opacity 0.2s ease;
+    opacity 0.18s ease,
+    transform 0.18s ease;
 }
 
-.tools:hover .tool-name,
-.tools:focus-visible .tool-name {
-  max-width: 8rem;
+.tool-tooltip__name {
+  font-family: var(--font-display), "Syne", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--fg);
+}
+
+.tool-tooltip__desc {
+  font-size: 0.6875rem;
+  line-height: 1.35;
+  text-align: center;
+  color: var(--muted);
+}
+
+.tools:hover .tool-tooltip,
+.tools:focus-visible .tool-tooltip {
   opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .tools,
-  .tool-name {
+  .tool-tooltip {
     transition: none;
+  }
+
+  .tools:hover .tool-tooltip,
+  .tools:focus-visible .tool-tooltip {
+    transform: translateX(-50%) translateY(0);
   }
 }
 
@@ -481,14 +512,87 @@ hr {
   color: var(--bg);
 }
 
-.blog-title {
-  @apply text-xl font-semibold font-display;
+.blog-list {
+  display: flex;
+  flex-direction: column;
 }
 
-.blog-div {
-  @apply space-y-2;
+.blog-list-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
 }
 
-.blog-ul {
-  @apply list-inside list-disc space-y-2 pl-4;
+.blog-list-item:first-child {
+  padding-top: 0;
+}
+
+.blog-list-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.blog-cover {
+  background-color: var(--surface);
+}
+
+.blog-prose {
+  @apply space-y-4 text-sm leading-relaxed sm:text-base;
+}
+
+.blog-prose h2 {
+  @apply font-display text-xl font-semibold tracking-tight pt-2;
+}
+
+.blog-prose h3 {
+  @apply font-display text-lg font-semibold tracking-tight;
+}
+
+.blog-prose p {
+  @apply text-[var(--fg)] opacity-90;
+}
+
+.blog-prose ul,
+.blog-prose ol {
+  @apply list-inside list-disc space-y-2 pl-1;
+}
+
+.blog-prose ol {
+  @apply list-decimal;
+}
+
+.blog-prose li {
+  @apply leading-relaxed;
+}
+
+.blog-prose a {
+  @apply underline font-medium;
+}
+
+.blog-prose hr {
+  border-color: var(--border);
+  @apply my-6;
+}
+
+.blog-prose strong {
+  @apply font-semibold;
+}
+
+.blog-prose code {
+  @apply rounded px-1.5 py-0.5 text-sm;
+  background-color: var(--surface);
+}
+
+.blog-prose pre {
+  @apply overflow-x-auto rounded-xl p-4 text-sm;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.blog-prose pre code {
+  @apply bg-transparent p-0;
+}
+
+.blog-prose blockquote {
+  @apply border-l-2 pl-4 italic text-muted;
+  border-color: var(--border);
 }
