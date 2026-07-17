@@ -1,15 +1,17 @@
-import React from "react";
+import { getTranslations } from "next-intl/server";
 import SectionHeader from "./SectionHeader";
 import Education from "./Education";
 import Experience from "./Experience";
 
-const PathBox = () => {
+const PathBox = async () => {
+  const t = await getTranslations("Path");
+
   return (
     <div className="space-y-12">
       <div>
         <SectionHeader
-          title={"Education"}
-          description={"Degrees and certifications"}
+          title={t("educationTitle")}
+          description={t("educationDescription")}
         />
         <div className="section-panel">
           <Education />
@@ -18,8 +20,8 @@ const PathBox = () => {
 
       <div>
         <SectionHeader
-          title={"Experience"}
-          description={"Where I've been building lately"}
+          title={t("experienceTitle")}
+          description={t("experienceDescription")}
         />
         <div className="section-panel">
           <Experience />

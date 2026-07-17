@@ -1,27 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 
 const EMAIL = "seydinag023@gmail.com";
 
-const Hero = () => {
+const Hero = async () => {
+  const t = await getTranslations("Hero");
+
   return (
     <section className="hero site-section">
       <div className="flex flex-col-reverse items-center justify-between gap-10 sm:flex-row sm:items-end">
         <div className="hero-copy flex w-full flex-col gap-4 sm:max-w-[58%]">
           <p className="hero-available flex items-center gap-2 text-sm tracking-wide">
             <span className="hero-available-dot" aria-hidden />
-            Let&apos;s work together
+            {t("available")}
           </p>
           <h1 className="font-display text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl">
             Ahmad Gueye
           </h1>
           <p className="max-w-md text-base leading-relaxed text-muted">
-            I design and ship web experiences
-            — 40+ projects delivered for agencies and founders.
+            {t("bio")}
           </p>
           <div className="flex flex-wrap items-center gap-3 pt-2">
             <Link href={`mailto:${EMAIL}`} className="btn-cta">
-              Email me
+              {t("emailMe")}
             </Link>
             <Link
               href="https://www.linkedin.com/in/muhammadguey"

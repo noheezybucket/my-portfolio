@@ -1,4 +1,8 @@
-const ProfileSummary = () => {
+import { getTranslations } from "next-intl/server";
+
+const ProfileSummary = async () => {
+  const t = await getTranslations("Hero");
+
   return (
     <aside className="mb-10 flex items-center gap-4 sm:gap-5">
       <img
@@ -11,15 +15,12 @@ const ProfileSummary = () => {
       <div className="min-w-0">
         <p className="hero-available flex items-center gap-2 text-xs tracking-wide sm:text-sm">
           <span className="hero-available-dot" aria-hidden />
-          Let&apos;s work together
+          {t("available")}
         </p>
         <h1 className="font-display text-lg font-semibold tracking-tight sm:text-xl">
           Ahmad
         </h1>
-        <p className="mt-0.5 text-sm leading-relaxed text-muted">
-          I design and ship web experiences — 40+ projects delivered for
-          agencies and founders.
-        </p>
+        <p className="mt-0.5 text-sm leading-relaxed text-muted">{t("bio")}</p>
       </div>
     </aside>
   );

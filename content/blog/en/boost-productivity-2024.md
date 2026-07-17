@@ -1,5 +1,5 @@
 ---
-title: "How to boost your productivity in 2024 🚀 ass"
+title: "How to boost your productivity in 2024 🚀 "
 description: "Tools and techniques to stay focused as a developer — sleep, deep work, and the right apps."
 date: "2024-08-19"
 cover: "/assets/blog/productivity.webp"

@@ -1,22 +1,23 @@
-import Link from "next/link";
+import { Link } from "@i18n/routing";
 import ProfileSummary from "@components/ProfileSummary";
 import SectionHeader from "@components/SectionHeader";
 import { formatPostDate, getAllPosts } from "@lib/blog";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-const Blog = () => {
-  const posts = getAllPosts();
+const Blog = async ({ params }) => {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("Blog");
+  const posts = getAllPosts({ locale });
 
   return (
     <>
       <ProfileSummary />
       <section className="site-section">
-        <SectionHeader
-          title={"Read my blog"}
-          description={"I write articles... Well... Sometimes 😂"}
-        />
+        <SectionHeader title={t("title")} description={t("description")} />
 
         {posts.length === 0 ? (
-          <p className="text-sm text-muted">No articles published yet.</p>
+          <p className="text-sm text-muted">{t("empty")}</p>
         ) : (
           <div className="blog-list">
             {posts.map((post) => (
@@ -42,14 +43,14 @@ const Blog = () => {
                       </p>
                     )}
                     <div className="flex gap-5 text-xs text-muted">
-                      <span>{formatPostDate(post.date)}</span>
+                      <span>{formatPostDate(post.date, locale)}</span>
                       <span>{post.readingTime}</span>
                     </div>
                     <Link
                       href={`/blog/${post.slug}`}
                       className="flex text-sm underline"
                     >
-                      More details
+                      {t("more")}
                       <img
                         src="/assets/ext-link.svg"
                         alt=""

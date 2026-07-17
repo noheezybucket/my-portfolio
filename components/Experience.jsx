@@ -1,46 +1,5 @@
 import Image from "next/image";
-
-const fullTime = [
-  {
-    id: 1,
-    role: "Founding Engineer",
-    company: "Webikoo",
-    period: "Aug 2025 — now",
-    image: "webikoop.png",
-    highlights: [
-      "Developed and maintained web applications using Angular, NestJS, React Native and WordPress",
-      "Leading a team of developers and designers to deliver high-quality web solutions for clients",
-      "Ensuring projects are completed on time and within budget while maintaining client satisfaction",
-    ],
-  },
-  {
-    id: 2,
-    role: "Fullstack Developer",
-    company: "Galsen Digital",
-    period: "Jul 2022 — Aug 2025",
-    image: "gda.png",
-    highlights: [
-      "Designed and developed websites and apps with WordPress, React, Angular, Tailwind, and the MERN stack",
-      "Participated in the creation of multiple mobile apps",
-      "Built 30+ custom websites with WordPress, Elementor, React, Angular, and Node.js",
-    ],
-  },
-];
-
-const collaborations = [
-  {
-    id: 1,
-    role: "Web Developer",
-    company: "Dican",
-    type: "Collaborator",
-    period: "Oct 2025 — now",
-    image: "dican.png",
-    highlights: [
-      "Develop websites",
-      "UX/UI design with Figma",
-    ],
-  },
-];
+import { getTranslations } from "next-intl/server";
 
 const ExperienceItem = ({ xp, showBorder }) => (
   <li
@@ -95,11 +54,44 @@ const ExperienceGroup = ({ label, items }) => (
   </div>
 );
 
-const Experience = () => {
+const Experience = async () => {
+  const t = await getTranslations("Experience");
+
+  const fullTime = [
+    {
+      id: "webikoo",
+      role: t("jobs.webikoo.role"),
+      company: "Webikoo",
+      period: t("jobs.webikoo.period"),
+      image: "webikoop.png",
+      highlights: t.raw("jobs.webikoo.highlights"),
+    },
+    {
+      id: "galsen",
+      role: t("jobs.galsen.role"),
+      company: "Galsen Digital",
+      period: t("jobs.galsen.period"),
+      image: "gda.png",
+      highlights: t.raw("jobs.galsen.highlights"),
+    },
+  ];
+
+  const collaborations = [
+    {
+      id: "dican",
+      role: t("jobs.dican.role"),
+      company: "Dican",
+      type: t("collaborator"),
+      period: t("jobs.dican.period"),
+      image: "dican.png",
+      highlights: t.raw("jobs.dican.highlights"),
+    },
+  ];
+
   return (
     <div className="space-y-10">
-      <ExperienceGroup label="Full-time" items={fullTime} />
-      <ExperienceGroup label="Collaborations" items={collaborations} />
+      <ExperienceGroup label={t("fullTime")} items={fullTime} />
+      <ExperienceGroup label={t("collaborations")} items={collaborations} />
     </div>
   );
 };

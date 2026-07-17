@@ -1,14 +1,18 @@
-import Link from "next/link";
+import { Link, routing } from "@i18n/routing";
 import { notFound } from "next/navigation";
 import MarkdownContent from "@components/MarkdownContent";
 import { formatPostDate, getPostBySlug, getPostSlugs } from "@lib/blog";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export function generateStaticParams() {
-  return getPostSlugs().map((slug) => ({ slug }));
+  return routing.locales.flatMap((locale) =>
+    getPostSlugs(locale).map((slug) => ({ locale, slug }))
+  );
 }
 
-export function generateMetadata({ params }) {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({ params }) {
+  const { locale, slug } = params;
+  const post = getPostBySlug(slug, locale);
   if (!post || post.draft) return {};
   return {
     title: `${post.title} — Muhammad Gueye`,
@@ -16,15 +20,18 @@ export function generateMetadata({ params }) {
   };
 }
 
-const BlogPostPage = ({ params }) => {
-  const post = getPostBySlug(params.slug);
+const BlogPostPage = async ({ params }) => {
+  const { locale, slug } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("Blog");
+  const post = getPostBySlug(slug, locale);
 
   if (!post || post.draft) notFound();
 
   return (
     <article className="site-section max-w-3xl">
       <Link href="/blog" className="mb-6 inline-flex text-sm text-muted underline">
-        ← Back to blog
+        {t("back")}
       </Link>
 
       {post.cover && (
@@ -36,7 +43,7 @@ const BlogPostPage = ({ params }) => {
             {post.title}
           </h1>
           <div className="flex gap-5 rounded-lg border border-border bg-surface px-3 py-1.5 text-xs text-foreground">
-            <span>{formatPostDate(post.date)}</span>
+            <span>{formatPostDate(post.date, locale)}</span>
             <span>{post.readingTime}</span>
           </div>
         </div>
@@ -48,7 +55,7 @@ const BlogPostPage = ({ params }) => {
             {post.title}
           </h1>
           <div className="flex gap-5 text-xs text-muted">
-            <span>{formatPostDate(post.date)}</span>
+            <span>{formatPostDate(post.date, locale)}</span>
             <span>{post.readingTime}</span>
           </div>
         </header>

@@ -1,76 +1,55 @@
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 
-const degrees = [
-  {
-    id: 1,
-    degree: "Master's degree",
-    field: "Software engineering",
-    school: "Higher Institute of Computer Science",
-    period: "Fev. 2025 — Dec. 2026",
-  },
-  {
-    id: 2,
-    degree: "Bachelor's degree",
-    field: "Software engineering",
-    school: "Higher Institute of Computer Science",
-    period: "Oct. 2023 — Oct. 2024",
-  },
-  {
-    id: 2,
-    degree: "Technical degree",
-    field: "Software engineering",
-    school: "Polytechnical School of Dakar",
-    period: "Oct. 2020 — Oct 2022",
-  },
-];
+const degreeKeys = ["master", "bachelor", "technical"];
 
 const certificates = [
   {
-    id: 1,
-    title: "JavaScript Algorithms & Data Structures",
+    id: "js",
     issuer: "freeCodeCamp",
     href: "https://www.freecodecamp.org/certification/koda_/javascript-algorithms-and-data-structures",
   },
   {
-    id: 2,
-    title: "Responsive Web Design",
+    id: "responsive",
     issuer: "freeCodeCamp",
     href: "https://www.freecodecamp.org/certification/koda_/responsive-web-design",
   },
 ];
 
-const Education = () => {
+const Education = async () => {
+  const t = await getTranslations("Education");
+
   return (
     <div className="space-y-10">
       <div>
         <p className="mb-4 text-xs font-medium uppercase tracking-wider text-muted">
-          Degrees
+          {t("degreesLabel")}
         </p>
         <ul className="space-y-6">
-          {degrees.map((degree, index) => (
+          {degreeKeys.map((key, index) => (
             <li
-              key={degree.id}
-              className={
-                index !== degrees.length - 1
-                  ? "border-b pb-6"
-                  : ""
-              }
+              key={key}
+              className={index !== degreeKeys.length - 1 ? "border-b pb-6" : ""}
               style={
-                index !== degrees.length - 1
+                index !== degreeKeys.length - 1
                   ? { borderColor: "var(--border)" }
                   : undefined
               }
             >
               <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
                 <h3 className="font-display text-base font-semibold tracking-tight md:text-lg">
-                  {degree.degree}
+                  {t(`degrees.${key}.degree`)}
                 </h3>
                 <time className="shrink-0 text-xs text-muted">
-                  {degree.period}
+                  {t(`degrees.${key}.period`)}
                 </time>
               </div>
-              <p className="mt-1 text-sm tracking-tight">{degree.field}</p>
-              <p className="mt-0.5 text-sm text-muted">{degree.school}</p>
+              <p className="mt-1 text-sm tracking-tight">
+                {t(`degrees.${key}.field`)}
+              </p>
+              <p className="mt-0.5 text-sm text-muted">
+                {t(`degrees.${key}.school`)}
+              </p>
             </li>
           ))}
         </ul>
@@ -78,7 +57,7 @@ const Education = () => {
 
       <div>
         <p className="mb-4 text-xs font-medium uppercase tracking-wider text-muted">
-          Certificates
+          {t("certificatesLabel")}
         </p>
         <ul className="space-y-3">
           {certificates.map((cert) => (
@@ -90,7 +69,7 @@ const Education = () => {
                 className="group flex flex-col gap-0.5 transition-colors sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"
               >
                 <span className="text-sm font-medium tracking-tight group-hover:text-accent">
-                  {cert.title}
+                  {t(`certificates.${cert.id}`)}
                 </span>
                 <span className="flex shrink-0 items-center gap-1 text-xs text-muted">
                   {cert.issuer}

@@ -2,7 +2,11 @@ import Footer from "@components/Footer";
 import Header from "@components/Header";
 import SmoothScroll from "@components/SmoothScroll";
 import ThemeProvider from "@components/ThemeProvider";
+import { routing } from "@i18n/routing";
 import { Outfit, Syne } from "next/font/google";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
 import Script from "next/script";
 import "@styles/globals.css";
 
@@ -19,12 +23,6 @@ const syne = Syne({
   display: "swap",
 });
 
-export const metadata = {
-  title: "Muhammad Gueye — Software Engineer",
-  description:
-    "Software engineer specializing in WordPress, React and Next.js. 30+ web projects shipped.",
-};
-
 const themeInitScript = `
 (function() {
   try {
@@ -38,10 +36,32 @@ const themeInitScript = `
 })();
 `;
 
-const RootLayout = ({ children }) => {
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({ params }) {
+  const { locale } = params;
+  const t = await getTranslations({ locale, namespace: "Meta" });
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
+
+const LocaleLayout = async ({ children, params }) => {
+  const { locale } = params;
+
+  if (!routing.locales.includes(locale)) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
+  const messages = await getMessages();
+
   return (
     <html
-      lang="en"
+      lang={locale}
       className={`dark ${outfit.variable} ${syne.variable}`}
       suppressHydrationWarning
     >
@@ -49,16 +69,18 @@ const RootLayout = ({ children }) => {
         <Script id="theme-init" strategy="beforeInteractive">
           {themeInitScript}
         </Script>
-        <ThemeProvider>
-          <SmoothScroll>
-            <Header />
-            <main className="box-center pt-4">{children}</main>
-            <Footer />
-          </SmoothScroll>
-        </ThemeProvider>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider>
+            <SmoothScroll>
+              <Header />
+              <main className="box-center pt-4">{children}</main>
+              <Footer />
+            </SmoothScroll>
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
 };
 
-export default RootLayout;
+export default LocaleLayout;

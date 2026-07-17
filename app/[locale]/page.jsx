@@ -2,8 +2,11 @@ import PathBox from "@components/PathBox";
 import ProjectsBox from "@components/ProjectsBox";
 import TechList from "@components/TechList";
 import Hero from "@components/Hero";
+import { setRequestLocale } from "next-intl/server";
 
-const Home = () => {
+const Home = ({ params }) => {
+  setRequestLocale(params.locale);
+
   return (
     <div>
       <Hero />

@@ -1,11 +1,14 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@i18n/routing";
 import { useLenis } from "lenis/react";
-import React, { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
+import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
+  const t = useTranslations("Nav");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -38,16 +41,17 @@ const Header = () => {
           <nav>
             <ul className="flex gap-3 text-sm">
               <li>
-                <Link href={"/"}>home</Link>
+                <Link href="/">{t("home")}</Link>
               </li>
               <li>
-                <Link href={"/projects"}>projects</Link>
+                <Link href="/projects">{t("projects")}</Link>
               </li>
               <li>
-                <Link href={"/blog"}>blog</Link>
+                <Link href="/blog">{t("blog")}</Link>
               </li>
             </ul>
           </nav>
+          <LanguageSwitcher />
           <ThemeToggle />
         </div>
       </div>

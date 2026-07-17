@@ -236,22 +236,6 @@ footer.site-section {
   gap: 0.65rem;
 }
 
-.project-tool {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.4rem;
-  background: rgba(255, 255, 255, 0.12);
-  padding: 0.25rem;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-
-/* Overlay is always dark — keep light-drawn icons bright */
-.project-tool .theme-icon-invert {
-  filter: none;
-}
-
 .project-card:hover .project-card__image {
   transform: scale(1.04);
 }

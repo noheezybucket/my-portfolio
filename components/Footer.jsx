@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 
 const EMAIL = "seydinag023@gmail.com";
 
@@ -16,24 +17,24 @@ const socials = [
   },
 ];
 
-const Footer = () => {
+const Footer = async () => {
+  const t = await getTranslations("Footer");
+
   return (
     <footer className="box-center site-section">
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-3 sm:max-w-lg">
-          <p className="text-sm tracking-wide text-muted">Contact</p>
+          <p className="text-sm tracking-wide text-muted">{t("contact")}</p>
           <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">
-            Let&apos;s talk about your project
+            {t("title")}
           </h2>
-          <p className="text-sm leading-relaxed text-muted">
-            Prefer email? Reach me directly — I usually reply within a day.
-          </p>
+          <p className="text-sm leading-relaxed text-muted">{t("subtitle")}</p>
         </div>
 
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap items-center gap-3">
             <Link href={`mailto:${EMAIL}`} className="btn-cta">
-              Email me
+              {t("emailMe")}
             </Link>
             <a
               href={`mailto:${EMAIL}`}
@@ -69,7 +70,7 @@ const Footer = () => {
           <p className="text-xs text-muted">
             © {new Date().getFullYear()} Muhammad Gueye
           </p>
-          <p className="text-xs text-muted">Software Engineer</p>
+          <p className="text-xs text-muted">{t("role")}</p>
         </div>
       </div>
     </footer>

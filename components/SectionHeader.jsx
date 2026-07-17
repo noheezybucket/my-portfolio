@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@i18n/routing";
 
 const SectionHeader = ({ title, description, buttonLink, buttonName }) => {
   return (
