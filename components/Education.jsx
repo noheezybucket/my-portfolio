@@ -3,15 +3,24 @@ import Link from "next/link";
 const degrees = [
   {
     id: 1,
-    title: "Software Engineering Bachelor's degree",
+    degree: "Master's degree",
+    field: "Software engineering",
     school: "Higher Institute of Computer Science",
-    period: "Oct 2023 — Oct 2024",
+    period: "Fev. 2025 — Dec. 2026",
   },
   {
     id: 2,
-    title: "Software Engineering Technical degree",
+    degree: "Bachelor's degree",
+    field: "Software engineering",
+    school: "Higher Institute of Computer Science",
+    period: "Oct. 2023 — Oct. 2024",
+  },
+  {
+    id: 2,
+    degree: "Technical degree",
+    field: "Software engineering",
     school: "Polytechnical School of Dakar",
-    period: "Oct 2020 — Oct 2022",
+    period: "Oct. 2020 — Oct 2022",
   },
 ];
 
@@ -33,33 +42,39 @@ const certificates = [
 const Education = () => {
   return (
     <div className="space-y-10">
-      <ul className="space-y-6">
-        {degrees.map((degree, index) => (
-          <li
-            key={degree.id}
-            className={
-              index !== degrees.length - 1
-                ? "border-b pb-6"
-                : ""
-            }
-            style={
-              index !== degrees.length - 1
-                ? { borderColor: "var(--border)" }
-                : undefined
-            }
-          >
-            <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
-              <h3 className="font-display text-base font-semibold tracking-tight md:text-lg">
-                {degree.title}
-              </h3>
-              <time className="shrink-0 text-xs text-muted">
-                {degree.period}
-              </time>
-            </div>
-            <p className="mt-1 text-sm text-muted">{degree.school}</p>
-          </li>
-        ))}
-      </ul>
+      <div>
+        <p className="mb-4 text-xs font-medium uppercase tracking-wider text-muted">
+          Degrees
+        </p>
+        <ul className="space-y-6">
+          {degrees.map((degree, index) => (
+            <li
+              key={degree.id}
+              className={
+                index !== degrees.length - 1
+                  ? "border-b pb-6"
+                  : ""
+              }
+              style={
+                index !== degrees.length - 1
+                  ? { borderColor: "var(--border)" }
+                  : undefined
+              }
+            >
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                <h3 className="font-display text-base font-semibold tracking-tight md:text-lg">
+                  {degree.degree}
+                </h3>
+                <time className="shrink-0 text-xs text-muted">
+                  {degree.period}
+                </time>
+              </div>
+              <p className="mt-1 text-sm tracking-tight">{degree.field}</p>
+              <p className="mt-0.5 text-sm text-muted">{degree.school}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       <div>
         <p className="mb-4 text-xs font-medium uppercase tracking-wider text-muted">
