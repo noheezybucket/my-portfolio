@@ -78,7 +78,7 @@ const TechList = () => {
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap ">
           {filteredSkills.map((skill) => (
             <span
               className="tools"
@@ -88,8 +88,8 @@ const TechList = () => {
             >
               <Image
                 src={`/assets/tools/${skill.icon}.svg`}
-                width={20}
-                height={20}
+                width={24}
+                height={24}
                 alt=""
                 className={toolIconClassName(skill.icon)}
               />
