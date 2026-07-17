@@ -1,80 +1,105 @@
 import Image from "next/image";
-import React from "react";
 
-const experiences = [
+const fullTime = [
   {
     id: 1,
-    entreprise: "DICAN",
-    length: "Oct 2025 - now",
-    image: "dican.png",
-    description:
-      "Collaborator-style contract, Develop websites with WordPress, UX/UI Design with Figma",
+    role: "Founding Engineer",
+    company: "Webikoo",
+    period: "Aug 2025 — now",
+    image: "webikoop.png",
+    highlights: [
+      "Developed and maintained web applications using Angular, NestJS, React Native and WordPress",
+      "Leading a team of developers and designers to deliver high-quality web solutions for clients",
+      "Ensuring projects are completed on time and within budget while maintaining client satisfaction",
+    ],
   },
   {
     id: 2,
-    entreprise: "WEBIKOO",
-    length: "Aug 2025 - now",
-    image: "webikoop.png",
-    description:
-      "Founding Developer, Leading a team of developers and designers to deliver high-quality web solutions for clients, Ensuring projects are completed on time and within budget while maintaining client satisfaction.",
-  },
-  {
-    id: 3,
-    entreprise: "GALSEN DIGITAL",
-    length: "Jul 2022 - Aug 2025",
+    role: "Fullstack Developer",
+    company: "Galsen Digital",
+    period: "Jul 2022 — Aug 2025",
     image: "gda.png",
-    description:
-      "Full-time contract, Software Engineer, Designed & Developped several web sites & apps built with WordPress - React/Angular/Tailwind - MERN Stack..., Has participated in the creation of multiple mobile apps, Built over 30+ custom websites using WordPress & Elementor / React / Angular / NodeJS",
+    highlights: [
+      "Designed and developed websites and apps with WordPress, React, Angular, Tailwind, and the MERN stack",
+      "Participated in the creation of multiple mobile apps",
+      "Built 30+ custom websites with WordPress, Elementor, React, Angular, and Node.js",
+    ],
   },
 ];
 
+const collaborations = [
+  {
+    id: 1,
+    role: "Web Developer",
+    company: "Dican",
+    type: "Collaborator",
+    period: "Oct 2025 — now",
+    image: "dican.png",
+    highlights: [
+      "Develop websites",
+      "UX/UI design with Figma",
+    ],
+  },
+];
+
+const ExperienceItem = ({ xp, showBorder }) => (
+  <li
+    className={showBorder ? "space-y-3 border-b pb-6" : "space-y-3"}
+    style={showBorder ? { borderColor: "var(--border)" } : undefined}
+  >
+    <div className="flex items-center gap-3">
+      <Image
+        src={`/assets/${xp.image}`}
+        width={48}
+        height={48}
+        className="max-h-[48px] rounded-xl"
+        alt={xp.company}
+      />
+      <div className="min-w-0 flex-1">
+        <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+          <h3 className="font-display text-base font-semibold tracking-tight md:text-lg">
+            {xp.role}
+          </h3>
+          <time className="shrink-0 text-xs text-muted">{xp.period}</time>
+        </div>
+        <p className="mt-0.5 text-sm text-muted">
+          {xp.company}
+          {xp.type ? ` · ${xp.type}` : ""}
+        </p>
+      </div>
+    </div>
+    <ul className="space-y-1 text-sm text-muted">
+      {xp.highlights.map((item) => (
+        <li key={item} className="list-none">
+          — {item}
+        </li>
+      ))}
+    </ul>
+  </li>
+);
+
+const ExperienceGroup = ({ label, items }) => (
+  <div>
+    <p className="mb-4 text-xs font-medium uppercase tracking-wider text-muted">
+      {label}
+    </p>
+    <ul className="space-y-6">
+      {items.map((xp, index) => (
+        <ExperienceItem
+          key={xp.id}
+          xp={xp}
+          showBorder={index !== items.length - 1}
+        />
+      ))}
+    </ul>
+  </div>
+);
+
 const Experience = () => {
   return (
-    <div className="space-y-8">
-      {experiences.map((xp, index) => {
-        return (
-          <div
-            key={xp.id}
-            className="space-y-3"
-            style={
-              index !== experiences.length - 1
-                ? {
-                    paddingBottom: "2rem",
-                    borderBottom: "1px solid var(--border)",
-                  }
-                : undefined
-            }
-          >
-            <div className="flex items-center gap-3">
-              <Image
-                src={`/assets/${xp.image}`}
-                width={48}
-                height={48}
-                className="max-h-[48px] rounded-xl"
-                alt={xp.entreprise}
-              />
-              <div className="w-full">
-                <div className="flex flex-col justify-between gap-1 lg:flex-row lg:items-baseline">
-                  <span className="font-display text-xl font-semibold tracking-tight">
-                    {xp.entreprise}
-                  </span>
-                  <span className="text-xs text-muted">{xp.length}</span>
-                </div>
-              </div>
-            </div>
-            <ul className="space-y-1 text-sm text-muted">
-              {xp.description.split(",").map(
-                (descli, i) =>
-                  descli && (
-                    <li key={i} className="list-none">
-                      — {descli.trim()}
-                    </li>
-                  )
-              )}
-            </ul>
-          </div>
-        );
-      })}
+    <div className="space-y-10">
+      <ExperienceGroup label="Full-time" items={fullTime} />
+      <ExperienceGroup label="Collaborations" items={collaborations} />
     </div>
   );
 };

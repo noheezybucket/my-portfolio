@@ -8,7 +8,10 @@ const Hero = () => {
     <section className="hero site-section">
       <div className="flex flex-col-reverse items-center justify-between gap-10 sm:flex-row sm:items-end">
         <div className="hero-copy flex w-full flex-col gap-4 sm:max-w-[58%]">
-          <p className="text-sm tracking-wide text-muted">Software Engineer</p>
+          <p className="hero-available flex items-center gap-2 text-sm tracking-wide">
+            <span className="hero-available-dot" aria-hidden />
+            Let&apos;s work together
+          </p>
           <h1 className="font-display text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl">
             Muhammad
           </h1>
