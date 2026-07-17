@@ -14,7 +14,7 @@ const ProfileSummary = () => {
           Let&apos;s work together
         </p>
         <h1 className="font-display text-lg font-semibold tracking-tight sm:text-xl">
-          Muhammad
+          Ahmad
         </h1>
         <p className="mt-0.5 text-sm leading-relaxed text-muted">
           I design and ship web experiences — 40+ projects delivered for

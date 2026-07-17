@@ -7,6 +7,18 @@ import { toolIconClassName } from "@lib/toolIcons";
 
 const projects = [
   {
+    title: "PACTA",
+    tagline: "Trusted counsel for Africa's digital economy",
+    image: "pacta.jpg",
+    link: "https://pacta.africa/",
+    type: "client",
+    stack: "wordpress",
+    tools: [
+      { name: "WordPress", icon: "wordpress" },
+      { name: "Elementor", icon: "elementor" },
+    ],
+  },
+  {
     title: "Bayān",
     tagline: "Learn Islam with clarity and ease",
     image: "bayan.jpg",

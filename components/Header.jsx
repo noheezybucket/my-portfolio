@@ -32,7 +32,7 @@ const Header = () => {
         }`}
       >
         <h1 className="font-display font-bold text-xl tracking-tight">
-          MG<span className="text-blue-500">.</span>
+          AG<span className="text-blue-500">.</span>
         </h1>
         <div className="flex items-center gap-3">
           <nav>

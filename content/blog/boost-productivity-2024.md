@@ -2,7 +2,8 @@
 title: "How to boost your productivity in 2024 🚀 ass"
 description: "Tools and techniques to stay focused as a developer — sleep, deep work, and the right apps."
 date: "2024-08-19"
-cover: "https://cdn.prod.website-files.com/622b2fcc29fc56492b771cb8/65f98c957daeda28bfcbe86d_Layer_1%20(6).png"
+cover: "/assets/blog/productivity.webp"
+
 draft: false
 ---
 
