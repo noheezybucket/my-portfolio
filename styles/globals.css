@@ -206,17 +206,30 @@ footer.site-section {
   text-decoration: none;
 }
 
+.project-card__media {
+  position: absolute;
+  inset: 0;
+}
+
 .project-card__image {
+  position: absolute;
+  inset: 0;
   height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: top center;
-  transition: transform 0.55s ease;
+  transition: transform 0.55s ease, opacity 0.4s ease;
+}
+
+.project-card__image--hover {
+  opacity: 0;
+  z-index: 1;
 }
 
 .project-card__overlay {
   position: absolute;
   inset: 0;
+  z-index: 2;
   display: flex;
   align-items: flex-end;
   padding: 1rem 1.1rem 1.1rem;
@@ -226,7 +239,7 @@ footer.site-section {
     rgba(0, 0, 0, 0.35) 42%,
     rgba(0, 0, 0, 0) 72%
   );
-  transition: background 0.3s ease;
+  transition: background 0.35s ease, opacity 0.35s ease;
 }
 
 .project-card__meta {
@@ -234,23 +247,74 @@ footer.site-section {
   width: 100%;
   flex-direction: column;
   gap: 0.65rem;
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-.project-card:hover .project-card__image {
-  transform: scale(1.04);
+.project-card__status {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 0.375rem;
+  background-color: rgba(0, 0, 0, 0.72);
+  padding: 0.3rem 0.55rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #fff;
+  backdrop-filter: blur(6px);
+  transition: opacity 0.35s ease;
 }
 
-.project-card:hover .project-card__overlay {
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.86) 0%,
-    rgba(0, 0, 0, 0.42) 48%,
-    rgba(0, 0, 0, 0.08) 78%
-  );
+@media (hover: hover) and (pointer: fine) {
+  .project-card:not(.project-card--has-preview):hover .project-card__image {
+    transform: scale(1.04);
+  }
+
+  .project-card:not(.project-card--has-preview):hover .project-card__overlay {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.86) 0%,
+      rgba(0, 0, 0, 0.42) 48%,
+      rgba(0, 0, 0, 0.08) 78%
+    );
+  }
+
+  .project-card--has-preview:hover .project-card__image--hover {
+    opacity: 1;
+  }
+
+  .project-card--has-preview:hover .project-card__overlay {
+    background: transparent;
+    pointer-events: none;
+  }
+
+  .project-card--has-preview:hover .project-card__meta {
+    opacity: 0;
+    transform: translateY(0.85rem);
+  }
+
+  .project-card--has-preview:hover .project-card__status {
+    opacity: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .project-card__image,
+  .project-card__overlay,
+  .project-card__meta,
+  .project-card__status {
+    transition: none;
+  }
+
   .project-card:hover .project-card__image {
+    transform: none;
+  }
+
+  .project-card--has-preview:hover .project-card__meta {
     transform: none;
   }
 }

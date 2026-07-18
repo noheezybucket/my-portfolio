@@ -85,10 +85,13 @@
     "types": {
       "all": "Tout",
       "client": "Client",
-      "personal": "Perso",
-      "practice": "Pratique"
+      "personal": "Perso"
+    },
+    "status": {
+      "inProgress": "En cours"
     },
     "items": {
+      "amnafi": "E-commerce pour un supermarché",
       "pacta": "Conseil de confiance pour l'économie numérique africaine",
       "ominis": "Produits beauté & santé livrés à Dakar",
       "bayan": "Apprendre l'islam avec clarté et simplicité",
@@ -97,13 +100,7 @@
       "jaba": "Marketplace du producteur au consommateur",
       "dna": "Site pour Dakar Network Angels",
       "webikoo": "Site d'agence",
-      "takku": "App Pomodoro de concentration",
-      "helium": "Landing page d'entraînement",
-      "gaming": "Landing page d'entraînement",
-      "bookmark": "Exercice de landing page",
-      "manage": "Exercice de landing page",
-      "chatapp": "HTML & CSS purs",
-      "fylo": "Landing page thème sombre"
+      "takku": "App Pomodoro de concentration"
     }
   },
   "ProjectDetail": {

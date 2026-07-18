@@ -6,23 +6,34 @@ import { Link } from "@i18n/routing";
 
 const projects = [
   {
+    id: "amnafi",
+    title: "Amnafi",
+    image: "amnafi.jpg",
+    link: null,
+    type: "client",
+    status: "inProgress",
+  },
+  {
     id: "pacta",
     title: "PACTA",
-    image: "pacta.jpg",
+    image: "pacta/pacta.jpg",
+    hoverImage: "pacta/pacta2.jpg",
     link: "https://pacta.africa/",
     type: "client",
   },
   {
     id: "ominis",
     title: "Ominis",
-    image: "ominis.jpg",
+    image: "ominis/ominis.jpg",
+    hoverImage: "ominis/ominis2.jpg",
     link: "https://ominis.store",
     type: "client",
   },
   {
     id: "bayan",
     title: "Bayān",
-    image: "bayan.jpg",
+    image: "bayan/bayan.jpg",
+    hoverImage: "bayan/bayan2.jpg",
     link: "https://bayanun.com",
     type: "client",
   },
@@ -43,7 +54,8 @@ const projects = [
   {
     id: "jaba",
     title: "Jaba",
-    image: "jaba/jaba.png",
+    image: "jaba/jaba.jpg",
+    hoverImage: "jaba/jaba2.png",
     link: "/projects/jaba",
     type: "personal",
   },
@@ -68,51 +80,9 @@ const projects = [
     link: "https://takku.vercel.app/",
     type: "personal",
   },
-  {
-    id: "helium",
-    title: "Helium",
-    image: "helium/helium.webp",
-    link: "https://ahmadgueye.github.io/mouse-effect/",
-    type: "practice",
-  },
-  {
-    id: "gaming",
-    title: "Gaming Campus",
-    image: "gaming-campus/gaming-campus.webp",
-    link: "https://ahmadgueye.github.io/gaming-campus-page/",
-    type: "practice",
-  },
-  {
-    id: "bookmark",
-    title: "Bookmark",
-    image: "bookmark/bookmark.png",
-    link: "https://ahmadgueye.github.io/bookmark-landing-page/",
-    type: "practice",
-  },
-  {
-    id: "manage",
-    title: "Manage",
-    image: "manage.png",
-    link: "https://ahmadgueye.github.io/manage-landing-page/",
-    type: "practice",
-  },
-  {
-    id: "chatapp",
-    title: "Chat app landing page",
-    image: "chat-app.png",
-    link: "https://ahmadgueye.github.io/chat-app-pure-css/",
-    type: "practice",
-  },
-  {
-    id: "fylo",
-    title: "Fylo",
-    image: "fylo.png",
-    link: "https://ahmadgueye.github.io/fylo-dark-theme-landing-page/",
-    type: "practice",
-  },
 ];
 
-const typeIds = ["all", "client", "personal", "practice"];
+const typeIds = ["all", "client", "personal"];
 
 const isExternal = (link) => /^https?:\/\//.test(link);
 
@@ -154,19 +124,37 @@ const ProjectsList = ({ limit }) => {
       ) : (
         <div className="project-grid">
           {list.map((project) => {
-            const external = isExternal(project.link);
+            const hasLink = Boolean(project.link);
+            const external = hasLink && isExternal(project.link);
             const linkProps = external
               ? { target: "_blank", rel: "noopener noreferrer" }
               : {};
             const tagline = t(`items.${project.id}`);
+            const hasPreview = Boolean(project.hoverImage);
 
             const card = (
               <>
-                <img
-                  src={`/assets/projects/${project.image}`}
-                  alt={project.title}
-                  className="project-card__image"
-                />
+                <div className="project-card__media">
+                  <img
+                    src={`/assets/projects/${project.image}`}
+                    alt={project.title}
+                    className="project-card__image project-card__image--primary"
+                  />
+                  {hasPreview && (
+                    <img
+                      src={`/assets/projects/${project.hoverImage}`}
+                      alt=""
+                      aria-hidden
+                      className="project-card__image project-card__image--hover"
+                    />
+                  )}
+                </div>
+                {project.status === "inProgress" && (
+                  <span className="project-card__status">
+                    <span className="hero-available-dot" aria-hidden />
+                    {t("status.inProgress")}
+                  </span>
+                )}
                 <div className="project-card__overlay">
                   <div className="project-card__meta">
                     <div className="min-w-0">
@@ -181,8 +169,13 @@ const ProjectsList = ({ limit }) => {
             );
 
             return (
-              <article key={project.id} className="project-card">
-                {external ? (
+              <article
+                key={project.id}
+                className={`project-card${hasPreview ? " project-card--has-preview" : ""}`}
+              >
+                {!hasLink ? (
+                  <div className="project-card__link">{card}</div>
+                ) : external ? (
                   <a
                     href={project.link}
                     className="project-card__link"

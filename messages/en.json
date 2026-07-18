@@ -85,10 +85,13 @@
     "types": {
       "all": "All",
       "client": "Client",
-      "personal": "Personal",
-      "practice": "Practice"
+      "personal": "Personal"
+    },
+    "status": {
+      "inProgress": "In progress"
     },
     "items": {
+      "amnafi": "E-commerce for a supermarket",
       "pacta": "Trusted counsel for Africa's digital economy",
       "ominis": "Beauty & health products delivered in Dakar",
       "bayan": "Learn Islam with clarity and ease",
@@ -97,13 +100,7 @@
       "jaba": "Farm-to-consumer marketplace",
       "dna": "Site for Dakar Network Angels",
       "webikoo": "Agency website",
-      "takku": "Pomodoro focus app",
-      "helium": "Training landing page",
-      "gaming": "Training landing page",
-      "bookmark": "Landing page practice",
-      "manage": "Landing page practice",
-      "chatapp": "Pure HTML & CSS",
-      "fylo": "Dark theme landing page"
+      "takku": "Pomodoro focus app"
     }
   },
   "ProjectDetail": {
