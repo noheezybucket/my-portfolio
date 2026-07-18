@@ -45,6 +45,7 @@
     "skills": {
       "React": "Interactive UIs and reusable components.",
       "Angular": "Structured apps with a clear architecture.",
+      "NestJS": "Scalable Node APIs with a clear architecture.",
       "Nextjs": "React apps with routing, SSR, and APIs.",
       "Tailwind": "Utility-first CSS for fast, consistent UI.",
       "Bootstrap": "Ready-made layout and UI patterns.",

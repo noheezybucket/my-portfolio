@@ -9,33 +9,16 @@ import { toolIconClassName } from "@lib/toolIcons";
 const skills = [
   { name: "React", key: "React", icon: "react", category: "frontend" },
   { name: "Angular", key: "Angular", icon: "angular", category: "frontend" },
+  { name: "NestJS", key: "NestJS", icon: "nest", category: "backend" },
   { name: "Next.js", key: "Nextjs", icon: "next", category: "fullstack" },
   { name: "Tailwind", key: "Tailwind", icon: "tailwind", category: "frontend" },
-  { name: "Bootstrap", key: "Bootstrap", icon: "bootstrap", category: "frontend" },
-  { name: "SASS", key: "SASS", icon: "sass", category: "frontend" },
-  { name: "HTML", key: "HTML", icon: "html", category: "frontend" },
-  { name: "CSS", key: "CSS", icon: "css", category: "frontend" },
-  { name: "JavaScript", key: "JavaScript", icon: "js", category: "frontend" },
   { name: "Laravel", key: "Laravel", icon: "laravel", category: "fullstack" },
-  { name: "React Native", key: "ReactNative", icon: "react", category: "frontend" },
-  { name: "MySQL", key: "MySQL", icon: "mysql", category: "backend" },
   { name: "MongoDB", key: "MongoDB", icon: "mongo", category: "backend" },
-  { name: "Node.js", key: "Nodejs", icon: "node", category: "backend" },
   { name: "WordPress", key: "WordPress", icon: "wordpress", category: "cms" },
-  { name: "Elementor", key: "Elementor", icon: "elementor", category: "cms" },
-  { name: "npm", key: "npm", icon: "npm", category: "tools" },
-  { name: "Trello", key: "Trello", icon: "trello", category: "tools" },
-  { name: "Slack", key: "Slack", icon: "slack", category: "tools" },
   { name: "PostgreSQL", key: "PostgreSQL", icon: "postgres", category: "backend" },
-  { name: "GitHub", key: "GitHub", icon: "github", category: "tools" },
-  { name: "Git", key: "Git", icon: "git", category: "tools" },
-  { name: "Figma", key: "Figma", icon: "figma", category: "design" },
-  { name: "WebStorm", key: "WebStorm", icon: "webstorm", category: "tools" },
-  { name: "VS Code", key: "VSCode", icon: "vscode", category: "tools" },
-  { name: "Express", key: "Express", icon: "express", category: "backend" },
-  { name: "Cursor", key: "Cursor", icon: "cursor", category: "ai" },
-  { name: "ChatGPT", key: "ChatGPT", icon: "openai", category: "ai" },
-  { name: "Claude", key: "Claude", icon: "claude", category: "ai" },
+  { name: "Figma", key: "Figma", icon: "figma", category: "tools" },
+  { name: "Cursor", key: "Cursor", icon: "cursor", category: "tools" },
+  
 ];
 
 const categoryIds = [
@@ -43,10 +26,10 @@ const categoryIds = [
   "fullstack",
   "frontend",
   "backend",
-  "design",
+  // "design",
   "tools",
   "cms",
-  "ai",
+  // "ai",
 ];
 
 const TechList = () => {
