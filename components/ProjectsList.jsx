@@ -4,6 +4,11 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@i18n/routing";
 
+const agencies = {
+  dican: { name: "Dican", logo: "/assets/dican.png" },
+  webikoo: { name: "Webikoo", logo: "/assets/webikoop.png" },
+};
+
 const projects = [
   {
     id: "amnafi",
@@ -12,6 +17,7 @@ const projects = [
     link: null,
     type: "client",
     status: "inProgress",
+    agency: "dican",
   },
   {
     id: "pacta",
@@ -20,14 +26,16 @@ const projects = [
     hoverImage: "pacta/pacta2.jpg",
     link: "https://pacta.africa/",
     type: "client",
+    agency: "dican",
   },
   {
-    id: "ominis",
-    title: "Ominis",
-    image: "ominis/ominis.jpg",
-    hoverImage: "ominis/ominis2.jpg",
-    link: "https://ominis.store",
+    id: "stek",
+    title: "STEK Talkshow",
+    image: "stek/stek.jpg",
+    hoverImage: "stek/stek2.png",
+    link: "https://stektalkshow.com",
     type: "client",
+    agency: "webikoo",
   },
   {
     id: "bayan",
@@ -43,14 +51,18 @@ const projects = [
     image: "transition/transition.webp",
     link: "https://transitionquality.com",
     type: "client",
+    agency: "webikoo",
   },
+
   {
-    id: "stek",
-    title: "STEK Talkshow",
-    image: "stek/stek.png",
-    link: "https://stektalkshow.com",
+    id: "ominis",
+    title: "Ominis",
+    image: "ominis/ominis.jpg",
+    hoverImage: "ominis/ominis2.jpg",
+    link: "https://ominis.store",
     type: "client",
   },
+
   {
     id: "jaba",
     title: "Jaba",
@@ -65,6 +77,7 @@ const projects = [
     image: "dna/dna.png",
     link: "https://dakarnetworkangels.com",
     type: "client",
+    agency: "webikoo",
   },
   {
     id: "webikoo",
@@ -131,6 +144,9 @@ const ProjectsList = ({ limit }) => {
               : {};
             const tagline = t(`items.${project.id}`);
             const hasPreview = Boolean(project.hoverImage);
+            const agency = project.agency
+              ? agencies[project.agency]
+              : null;
 
             const card = (
               <>
@@ -158,6 +174,17 @@ const ProjectsList = ({ limit }) => {
                 <div className="project-card__overlay">
                   <div className="project-card__meta">
                     <div className="min-w-0">
+                      {agency && (
+                        <p className="project-card__agency">
+                          <img
+                            src={agency.logo}
+                            alt=""
+                            aria-hidden
+                            className="project-card__agency-logo"
+                          />
+                          <span>{agency.name}</span>
+                        </p>
+                      )}
                       <h3 className="font-display text-lg font-semibold tracking-tight text-white md:text-xl">
                         {project.title}
                       </h3>
