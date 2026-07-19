@@ -46,12 +46,11 @@ const projects = [
     type: "client",
   },
   {
-    id: "transition",
-    title: "Transition Quality",
-    image: "transition/transition.webp",
-    link: "https://transitionquality.com",
-    type: "client",
-    agency: "webikoo",
+    id: "takku",
+    title: "Takku",
+    image: "takku.jpg",
+    link: "https://takku.vercel.app/",
+    type: "personal",
   },
 
   {
@@ -72,6 +71,14 @@ const projects = [
     type: "personal",
   },
   {
+    id: "transition",
+    title: "Transition Quality",
+    image: "transition/transition.webp",
+    link: "https://transitionquality.com",
+    type: "client",
+    agency: "webikoo",
+  },
+  {
     id: "dna",
     title: "DNA",
     image: "dna/dna.png",
@@ -86,13 +93,7 @@ const projects = [
     link: "https://webikoo.pro",
     type: "client",
   },
-  {
-    id: "takku",
-    title: "Takku",
-    image: "waxtu.png",
-    link: "https://takku.vercel.app/",
-    type: "personal",
-  },
+ 
 ];
 
 const typeIds = ["all", "client", "personal"];
