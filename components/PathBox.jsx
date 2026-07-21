@@ -1,29 +1,32 @@
-import React from "react";
+import { getTranslations } from "next-intl/server";
 import SectionHeader from "./SectionHeader";
 import Education from "./Education";
 import Experience from "./Experience";
 
-const PathBox = () => {
+const PathBox = async () => {
+  const t = await getTranslations("Path");
+
   return (
-    <div>
-      <SectionHeader
-        icon={"education"}
-        title={"Education"}
-        description={"About my curriculum"}
-        // buttonLink={"#"}
-        // buttonName={"Get Resume"}
-      />
-      <Education />
+    <div className="space-y-12">
+      <div>
+        <SectionHeader
+          title={t("educationTitle")}
+          description={t("educationDescription")}
+        />
+        <div className="section-panel">
+          <Education />
+        </div>
+      </div>
 
-      <br />
-
-      <SectionHeader
-        icon={"experience"}
-        title={"Experience"}
-        description={"Latest news on top 😃 "}
-      />
-
-      <Experience />
+      <div>
+        <SectionHeader
+          title={t("experienceTitle")}
+          description={t("experienceDescription")}
+        />
+        <div className="section-panel">
+          <Experience />
+        </div>
+      </div>
     </div>
   );
 };

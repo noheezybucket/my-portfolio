@@ -1,24 +1,19 @@
-import React from "react";
+import { getTranslations } from "next-intl/server";
 import SectionHeader from "./SectionHeader";
-import Image from "next/image";
-import Link from "next/link";
 import ProjectsList from "@components/ProjectsList";
 
-const ProjectsBox = () => {
+const ProjectsBox = async () => {
+  const t = await getTranslations("Projects");
+
   return (
     <section>
       <SectionHeader
-        icon={"projects"}
-        title={"Projects"}
-        description={"Some of the great work i did"}
-        buttonLink={"/projects"}
-        buttonName={"All projects"}
+        title={t("title")}
+        description={t("homeDescription")}
+        buttonLink="/projects"
+        buttonName={t("allProjects")}
       />
-      <ProjectsList limit={4}/>
-      {/*<Link href={"/projects"} className="underline flex justify-center py-4">*/}
-      {/*  See all projects{" "}*/}
-      {/*  <img src="/assets/ext-link.svg" alt="" className="ext-link-icon" />*/}
-      {/*</Link>*/}
+      <ProjectsList limit={4} />
     </section>
   );
 };

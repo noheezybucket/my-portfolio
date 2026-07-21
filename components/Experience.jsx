@@ -1,72 +1,97 @@
 import Image from "next/image";
-import React from "react";
+import { getTranslations } from "next-intl/server";
 
-const experiences = [
-  {
-    id: 1,
-    entreprise: "DICAN",
-    length: "Oct 2025 - now",
-    image: "dican.png",
-    description:
-        "Collaborator-style contract, Develop websites with WordPress, UX/UI Design with Figma",
-  },
-  {
-    id: 2,
-    entreprise: "WEBIKOO",
-    length: "Aug 2025 - now",
-    image: "webikoop.png",
-    description:
-      "Founding Developer, Leading a team of developers and designers to deliver high-quality web solutions for clients, Ensuring projects are completed on time and within budget while maintaining client satisfaction.",
-  },
-  // {
-  //   id: 2,
-  //   entreprise: "ASAMAAN",
-  //   length: "Oct 2023 - now",
-  //   image: "asamaan.jpg",
-  //   description:
-  //     "Co-founder & Software Engineer, PROJECT PAUSED FOR THE MOMENT 🥲",
-  // },
+const ExperienceItem = ({ xp, showBorder }) => (
+  <li
+    className={showBorder ? "space-y-3 border-b pb-6" : "space-y-3"}
+    style={showBorder ? { borderColor: "var(--border)" } : undefined}
+  >
+    <div className="flex items-center gap-3">
+      <Image
+        src={`/assets/${xp.image}`}
+        width={48}
+        height={48}
+        className="max-h-[48px] rounded-xl"
+        alt={xp.company}
+      />
+      <div className="min-w-0 flex-1">
+        <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+          <h3 className="font-display text-base font-semibold tracking-tight md:text-lg">
+            {xp.role}
+          </h3>
+          <time className="shrink-0 text-xs text-muted">{xp.period}</time>
+        </div>
+        <p className="mt-0.5 text-sm text-muted">
+          {xp.company}
+          {xp.type ? ` · ${xp.type}` : ""}
+        </p>
+      </div>
+    </div>
+    <ul className="space-y-1 text-sm text-muted">
+      {xp.highlights.map((item) => (
+        <li key={item} className="list-none">
+          — {item}
+        </li>
+      ))}
+    </ul>
+  </li>
+);
 
-  {
-    id: 3,
-    entreprise: "GALSEN DIGITAL",
-    length: "Jul 2022 - Aug 2025",
-    image: "gda.png",
-    description:
-      "Full-time contract, Software Engineer, Designed & Developped several web sites & apps built with WordPress - React/Angular/Tailwind - MERN Stack..., Has participated in the creation of multiple mobile apps, Built over 30+ custom websites using WordPress & Elementor / React / Angular / NodeJS",
-  },
-];
+const ExperienceGroup = ({ label, items }) => (
+  <div>
+    <p className="mb-4 text-xs font-medium uppercase tracking-wider text-muted">
+      {label}
+    </p>
+    <ul className="space-y-6">
+      {items.map((xp, index) => (
+        <ExperienceItem
+          key={xp.id}
+          xp={xp}
+          showBorder={index !== items.length - 1}
+        />
+      ))}
+    </ul>
+  </div>
+);
 
-const Experience = () => {
+const Experience = async () => {
+  const t = await getTranslations("Experience");
+
+  const fullTime = [
+    {
+      id: "webikoo",
+      role: t("jobs.webikoo.role"),
+      company: "Webikoo",
+      period: t("jobs.webikoo.period"),
+      image: "webikoop.png",
+      highlights: t.raw("jobs.webikoo.highlights"),
+    },
+    {
+      id: "galsen",
+      role: t("jobs.galsen.role"),
+      company: "Galsen Digital",
+      period: t("jobs.galsen.period"),
+      image: "gda.png",
+      highlights: t.raw("jobs.galsen.highlights"),
+    },
+  ];
+
+  const collaborations = [
+    {
+      id: "dican",
+      role: t("jobs.dican.role"),
+      company: "Dican",
+      type: t("collaborator"),
+      period: t("jobs.dican.period"),
+      image: "dican.png",
+      highlights: t.raw("jobs.dican.highlights"),
+    },
+  ];
+
   return (
-    <div className="border-op p-2 space-y-5">
-      {experiences.map((xp, index) => {
-        return (
-          <div className="bg-background space-y-5" key={index}>
-            <div className="flex gap-2 items-center">
-              <Image
-                src={`/assets/${xp.image}`}
-                width={50}
-                height={50}
-                className="rounded-xl max-h-[50px]"
-                alt={xp.image}
-              />
-              <div className="w-full">
-                <div className="flex flex-col lg:flex-row  justify-between">
-                  <span className="text-xl font-semibold">{xp.entreprise}</span>
-                  <span className="text-xs">{xp.length}</span>
-                </div>
-              </div>
-            </div>
-            <div className="text-xs list-none space-y-1">
-              {xp.description.split(",").map((descli, index) => {
-                return descli && <li key={index}>- {descli}</li>;
-              })}
-            </div>
-            {experiences.length != xp.id && <hr className="my-5" />}
-          </div>
-        );
-      })}
+    <div className="space-y-10">
+      <ExperienceGroup label={t("fullTime")} items={fullTime} />
+      <ExperienceGroup label={t("collaborations")} items={collaborations} />
     </div>
   );
 };

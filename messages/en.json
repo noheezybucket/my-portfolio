@@ -1,0 +1,190 @@
+{
+  "Meta": {
+    "title": "Muhammad Gueye — Software Engineer",
+    "description": "Software engineer specializing in WordPress, React and Next.js. 30+ web projects shipped."
+  },
+  "Nav": {
+    "home": "home",
+    "projects": "projects",
+    "blog": "blog"
+  },
+  "Language": {
+    "label": "Language",
+    "en": "EN",
+    "fr": "FR"
+  },
+  "Theme": {
+    "toLight": "Switch to light mode",
+    "toDark": "Switch to dark mode"
+  },
+  "Hero": {
+    "available": "Let's work together",
+    "bio": "I design and ship web experiences — 40+ projects delivered for agencies and founders.",
+    "emailMe": "Email me"
+  },
+  "Footer": {
+    "contact": "Contact",
+    "title": "Let's talk about your project",
+    "subtitle": "Prefer email? Reach me directly — I usually reply within a day.",
+    "emailMe": "Email me",
+    "role": "Software Engineer"
+  },
+  "Tech": {
+    "title": "What I build with",
+    "description": "Languages, frameworks, and tools I use to design and ship products.",
+    "categories": {
+      "all": "All",
+      "fullstack": "Fullstack",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "design": "UX/UI",
+      "tools": "Tools",
+      "cms": "CMS",
+      "ai": "AI"
+    },
+    "skills": {
+      "React": "Interactive UIs and reusable components.",
+      "Angular": "Structured apps with a clear architecture.",
+      "NestJS": "Scalable Node APIs with a clear architecture.",
+      "Nextjs": "React apps with routing, SSR, and APIs.",
+      "Tailwind": "Utility-first CSS for fast, consistent UI.",
+      "Bootstrap": "Ready-made layout and UI patterns.",
+      "SASS": "Maintainable styles with variables and mixins.",
+      "HTML": "Semantic structure for accessible pages.",
+      "CSS": "Layout, motion, and visual polish.",
+      "JavaScript": "Logic and interactivity across the stack.",
+      "Laravel": "PHP backends, APIs, and admin tools.",
+      "ReactNative": "Cross-platform mobile apps with React.",
+      "MySQL": "Relational data for structured products.",
+      "MongoDB": "Flexible documents when the schema evolves.",
+      "Nodejs": "Server-side JavaScript and tooling.",
+      "WordPress": "Content sites, themes, and custom builds.",
+      "Elementor": "Visual page building on WordPress.",
+      "npm": "Package management for JS projects.",
+      "Trello": "Kanban boards to track delivery.",
+      "Slack": "Team chat and async collaboration.",
+      "PostgreSQL": "Reliable SQL for production data.",
+      "GitHub": "Code hosting, reviews, and CI.",
+      "Git": "Version control for every project.",
+      "Figma": "UI design, prototypes, and handoff.",
+      "WebStorm": "Deep IDE for JS and fullstack work.",
+      "VSCode": "Everyday editor for coding and debug.",
+      "Express": "Lightweight Node APIs and servers.",
+      "Cursor": "AI-assisted coding in the editor.",
+      "ChatGPT": "Drafting, research, and problem-solving.",
+      "Claude": "Writing, reasoning, and code review."
+    }
+  },
+  "Projects": {
+    "title": "Projects",
+    "homeDescription": "Selected work across product and client sites.",
+    "pageDescription": "A selection of product and client work I've shipped.",
+    "allProjects": "All projects",
+    "emptyFiltered": "No projects match these filters.",
+    "emptySoon": "Projects will be updated soon.",
+    "types": {
+      "all": "All",
+      "client": "Client",
+      "personal": "Personal"
+    },
+    "status": {
+      "inProgress": "In progress"
+    },
+    "items": {
+      "amnafi": "E-commerce for a supermarket",
+      "pacta": "Trusted counsel for Africa's digital economy",
+      "ominis": "Beauty & health products delivered in Dakar",
+      "bayan": "Learn Islam with clarity and ease",
+      "transition": "Brand site for a quality consultancy",
+      "stek": "Media site for a talk show brand",
+      "jaba": "Farm-to-consumer marketplace",
+      "dna": "Site for Dakar Network Angels",
+      "webikoo": "Agency website",
+      "takku": "Pomodoro focus app"
+    }
+  },
+  "ProjectDetail": {
+    "liveUnavailable": "Live site not available yet",
+    "contentSoon": "Content will be added soon.",
+    "jabaDescription": "Jaba is an online platform for selling agricultural crops. It is an initiative to connect local farmers with consumers, providing a convenient and efficient solution for buying and selling fresh, quality produce.",
+    "cburgerDescription": "CBurger is an online burger ordering & fast-food management platform. It allows the customer to order a burger and the manager is able to treat the order, change the status and notify the customer via email."
+  },
+  "Path": {
+    "educationTitle": "Education",
+    "educationDescription": "Degrees and certifications",
+    "experienceTitle": "Experience",
+    "experienceDescription": "Where I've been building lately"
+  },
+  "Education": {
+    "degreesLabel": "Degrees",
+    "certificatesLabel": "Certificates",
+    "degrees": {
+      "master": {
+        "degree": "Master's degree",
+        "field": "Software engineering",
+        "school": "Higher Institute of Computer Science",
+        "period": "Feb. 2025 — Dec. 2026"
+      },
+      "bachelor": {
+        "degree": "Bachelor's degree",
+        "field": "Software engineering",
+        "school": "Higher Institute of Computer Science",
+        "period": "Oct. 2023 — Oct. 2024"
+      },
+      "technical": {
+        "degree": "Technical degree",
+        "field": "Software engineering",
+        "school": "Polytechnical School of Dakar",
+        "period": "Oct. 2020 — Oct. 2022"
+      }
+    },
+    "certificates": {
+      "js": "JavaScript Algorithms & Data Structures",
+      "responsive": "Responsive Web Design"
+    }
+  },
+  "Experience": {
+    "fullTime": "Full-time",
+    "collaborations": "Collaborations",
+    "collaborator": "Collaborator",
+    "now": "now",
+    "jobs": {
+      "webikoo": {
+        "role": "Founding Engineer",
+        "period": "Aug 2025 — now",
+        "highlights": [
+          "Developed and maintained web applications using Angular, NestJS, React Native and WordPress",
+          "Leading a team of developers and designers to deliver high-quality web solutions for clients",
+          "Ensuring projects are completed on time and within budget while maintaining client satisfaction"
+        ]
+      },
+      "galsen": {
+        "role": "Fullstack Developer",
+        "period": "Jul 2022 — Aug 2025",
+        "highlights": [
+          "Designed and developed websites and apps with WordPress, React, Angular, Tailwind, and the MERN stack",
+          "Participated in the creation of multiple mobile apps",
+          "Built 30+ custom websites with WordPress, Elementor, React, Angular, and Node.js"
+        ]
+      },
+      "dican": {
+        "role": "Web Developer",
+        "period": "Oct 2025 — now",
+        "highlights": [
+          "Develop websites",
+          "UX/UI design with Figma"
+        ]
+      }
+    }
+  },
+  "Blog": {
+    "title": "Read my blog",
+    "description": "I write articles... Well... Sometimes 😂",
+    "empty": "No articles published yet.",
+    "more": "More details",
+    "back": "← Back to blog"
+  },
+  "Gallery": {
+    "soon": "Gallery will be updated very soon"
+  }
+}

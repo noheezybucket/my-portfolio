@@ -1,0 +1,190 @@
+{
+  "Meta": {
+    "title": "Muhammad Gueye — Ingénieur logiciel",
+    "description": "Ingénieur logiciel spécialisé en WordPress, React et Next.js. Plus de 30 projets web livrés."
+  },
+  "Nav": {
+    "home": "accueil",
+    "projects": "projets",
+    "blog": "blog"
+  },
+  "Language": {
+    "label": "Langue",
+    "en": "EN",
+    "fr": "FR"
+  },
+  "Theme": {
+    "toLight": "Passer en mode clair",
+    "toDark": "Passer en mode sombre"
+  },
+  "Hero": {
+    "available": "Travaillons ensemble",
+    "bio": "Je conçois et livre des expériences web — plus de 40 projets pour des agences et des fondateurs.",
+    "emailMe": "M'écrire"
+  },
+  "Footer": {
+    "contact": "Contact",
+    "title": "Parlons de votre projet",
+    "subtitle": "Vous préférez l'e-mail ? Écrivez-moi directement — je réponds en général sous 24 h.",
+    "emailMe": "M'écrire",
+    "role": "Ingénieur logiciel"
+  },
+  "Tech": {
+    "title": "Avec quoi je construis",
+    "description": "Langages, frameworks et outils que j'utilise pour concevoir et livrer des produits.",
+    "categories": {
+      "all": "Tout",
+      "fullstack": "Fullstack",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "design": "UX/UI",
+      "tools": "Outils",
+      "cms": "CMS",
+      "ai": "IA"
+    },
+    "skills": {
+      "React": "Interfaces interactives et composants réutilisables.",
+      "Angular": "Applications structurées avec une architecture claire.",
+      "NestJS": "APIs Node scalables avec une architecture claire.",
+      "Nextjs": "Apps React avec routing, SSR et APIs.",
+      "Tailwind": "CSS utilitaire pour une UI rapide et cohérente.",
+      "Bootstrap": "Motifs de mise en page et d'UI prêts à l'emploi.",
+      "SASS": "Styles maintenables avec variables et mixins.",
+      "HTML": "Structure sémantique pour des pages accessibles.",
+      "CSS": "Mise en page, motion et finitions visuelles.",
+      "JavaScript": "Logique et interactivité sur toute la stack.",
+      "Laravel": "Backends PHP, APIs et outils d'admin.",
+      "ReactNative": "Apps mobiles multiplateformes avec React.",
+      "MySQL": "Données relationnelles pour des produits structurés.",
+      "MongoDB": "Documents flexibles quand le schéma évolue.",
+      "Nodejs": "JavaScript côté serveur et tooling.",
+      "WordPress": "Sites de contenu, thèmes et builds sur mesure.",
+      "Elementor": "Construction visuelle de pages sur WordPress.",
+      "npm": "Gestion de paquets pour projets JS.",
+      "Trello": "Tableaux kanban pour suivre la livraison.",
+      "Slack": "Chat d'équipe et collaboration asynchrone.",
+      "PostgreSQL": "SQL fiable pour les données en production.",
+      "GitHub": "Hébergement de code, reviews et CI.",
+      "Git": "Contrôle de version pour chaque projet.",
+      "Figma": "Design UI, prototypes et handoff.",
+      "WebStorm": "IDE approfondi pour JS et fullstack.",
+      "VSCode": "Éditeur du quotidien pour coder et debugger.",
+      "Express": "APIs et serveurs Node légers.",
+      "Cursor": "Codage assisté par l'IA dans l'éditeur.",
+      "ChatGPT": "Rédaction, recherche et résolution de problèmes.",
+      "Claude": "Écriture, raisonnement et revue de code."
+    }
+  },
+  "Projects": {
+    "title": "Projets",
+    "homeDescription": "Une sélection de produits et de sites clients.",
+    "pageDescription": "Une sélection de produits et de missions clients que j'ai livrés.",
+    "allProjects": "Tous les projets",
+    "emptyFiltered": "Aucun projet ne correspond à ces filtres.",
+    "emptySoon": "Les projets seront bientôt mis à jour.",
+    "types": {
+      "all": "Tout",
+      "client": "Client",
+      "personal": "Perso"
+    },
+    "status": {
+      "inProgress": "En cours"
+    },
+    "items": {
+      "amnafi": "E-commerce pour un supermarché",
+      "pacta": "Conseil de confiance pour l'économie numérique africaine",
+      "ominis": "Produits beauté & santé livrés à Dakar",
+      "bayan": "Apprendre l'islam avec clarté et simplicité",
+      "transition": "Site de marque pour un cabinet qualité",
+      "stek": "Site média pour une marque de talk-show",
+      "jaba": "Marketplace du producteur au consommateur",
+      "dna": "Site pour Dakar Network Angels",
+      "webikoo": "Site d'agence",
+      "takku": "App Pomodoro de concentration"
+    }
+  },
+  "ProjectDetail": {
+    "liveUnavailable": "Site live pas encore disponible",
+    "contentSoon": "Le contenu sera ajouté bientôt.",
+    "jabaDescription": "Jaba est une plateforme en ligne de vente de produits agricoles. Elle connecte les agriculteurs locaux aux consommateurs pour acheter et vendre des produits frais et de qualité, de façon simple et efficace.",
+    "cburgerDescription": "CBurger est une plateforme de commande de burgers et de gestion de fast-food. Le client commande un burger ; le gérant traite la commande, change le statut et notifie le client par e-mail."
+  },
+  "Path": {
+    "educationTitle": "Formation",
+    "educationDescription": "Diplômes et certifications",
+    "experienceTitle": "Expérience",
+    "experienceDescription": "Où j'ai construit récemment"
+  },
+  "Education": {
+    "degreesLabel": "Diplômes",
+    "certificatesLabel": "Certifications",
+    "degrees": {
+      "master": {
+        "degree": "Master",
+        "field": "Génie logiciel",
+        "school": "Institut Supérieur d'Informatique",
+        "period": "Fév. 2025 — Déc. 2026"
+      },
+      "bachelor": {
+        "degree": "Licence professionnelle",
+        "field": "Génie logiciel",
+        "school": "Institut Supérieur d'Informatique",
+        "period": "Oct. 2023 — Oct. 2024"
+      },
+      "technical": {
+        "degree": "Diplôme Supérieur de Technicien en Informatique",
+        "field": "Génie logiciel",
+        "school": "École Polytechnique de Dakar",
+        "period": "Oct. 2020 — Oct. 2022"
+      }
+    },
+    "certificates": {
+      "js": "Algorithmes & structures de données JavaScript",
+      "responsive": "Responsive Web Design"
+    }
+  },
+  "Experience": {
+    "fullTime": "Temps plein",
+    "collaborations": "Collaborations",
+    "collaborator": "Collaborateur",
+    "now": "aujourd'hui",
+    "jobs": {
+      "webikoo": {
+        "role": "Founding Engineer",
+        "period": "Août 2025 — aujourd'hui",
+        "highlights": [
+          "Développement et maintenance d'applications web avec Angular, NestJS, React Native et WordPress",
+          "Direction d'une équipe de développeurs et designers pour livrer des solutions web de qualité",
+          "Respect des délais et du budget tout en maintenant la satisfaction client"
+        ]
+      },
+      "galsen": {
+        "role": "Développeur fullstack",
+        "period": "Juil. 2022 — Août 2025",
+        "highlights": [
+          "Conception et développement de sites et apps avec WordPress, React, Angular, Tailwind et la stack MERN",
+          "Participation à la création de plusieurs applications mobiles",
+          "Plus de 30 sites sur mesure avec WordPress, Elementor, React, Angular et Node.js"
+        ]
+      },
+      "dican": {
+        "role": "Développeur web",
+        "period": "Oct. 2025 — aujourd'hui",
+        "highlights": [
+          "Développement de sites web",
+          "Design UX/UI avec Figma"
+        ]
+      }
+    }
+  },
+  "Blog": {
+    "title": "Lire mon blog",
+    "description": "J'écris des articles... Enfin... Parfois 😂",
+    "empty": "Aucun article publié pour le moment.",
+    "more": "En savoir plus",
+    "back": "← Retour au blog"
+  },
+  "Gallery": {
+    "soon": "La galerie sera bientôt mise à jour"
+  }
+}
