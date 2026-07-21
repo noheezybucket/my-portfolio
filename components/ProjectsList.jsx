@@ -10,24 +10,16 @@ const agencies = {
 };
 
 const projects = [
-  {
-    id: "amnafi",
-    title: "Amnafi",
-    image: "amnafi.jpg",
-    link: null,
-    type: "client",
-    status: "inProgress",
-    agency: "dican",
-  },
-  {
-    id: "pacta",
-    title: "PACTA",
-    image: "pacta/pacta.jpg",
-    hoverImage: "pacta/pacta2.jpg",
-    link: "https://pacta.africa/",
-    type: "client",
-    agency: "dican",
-  },
+  // {
+  //   id: "amnafi",
+  //   title: "Amnafi",
+  //   image: "amnafi.jpg",
+  //   link: null,
+  //   type: "client",
+  //   status: "inProgress",
+  //   agency: "dican",
+  // },
+
   {
     id: "stek",
     title: "STEK Talkshow",
@@ -51,6 +43,16 @@ const projects = [
     image: "takku.jpg",
     link: "https://takku.vercel.app/",
     type: "personal",
+  },
+
+  {
+    id: "pacta",
+    title: "PACTA",
+    image: "pacta/pacta.jpg",
+    hoverImage: "pacta/pacta2.jpg",
+    link: "https://pacta.africa/",
+    type: "client",
+    agency: "dican",
   },
 
   {
